@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerLoginComponent implements OnInit {
 
+  loginBool:boolean
+
   constructor() { }
 
   ngOnInit() {

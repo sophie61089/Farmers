@@ -1,4 +1,4 @@
-package com.casestudy.farmingapp.Customer;
+package com.casestudy.farming.app.VegStock;
 
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
@@ -11,41 +11,39 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class CustomerAccessAPI {
-	
-	CustomersJPARepository repository;
+public class VegStockAccessAPI {
 
+	VegStockJPARepository repository;
 
-	public CustomersJPARepository getRepository() {
+	public VegStockJPARepository getRepository() {
 		return repository;
 	}
 	@Autowired
-	public void setRepository(CustomersJPARepository repository) {
+	public void setRepository(VegStockJPARepository repository) {
 		this.repository = repository;
 	}
 	@Path("/list") 
 	@GET
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public Iterable<Customer> listCustomers(){
+	public Iterable<VegStock> listVegStock(){
 		return getRepository().findAll();
 	}
 	@POST
 	@Path("/register") 
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
-	public Customer addCustomer(@BeanParam Customer newCustomer) {
-		getRepository().save(newCustomer);
-		return newCustomer;
+	public VegStock addVegStock(@BeanParam VegStock newVegStock) {
+		getRepository().save(newVegStock);
+		return newVegStock;
 	}
 	@DELETE
 	@Path("/delete")
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public Customer deleteCustomer(int customerId) {
-		Customer deleteCustomer = getRepository().findById(customerId).get();
-		System.out.println(deleteCustomer);
-		getRepository().delete(deleteCustomer);
-		return deleteCustomer;
+	public VegStock deleteVegStock(int id) {
+		VegStock deleteVegStock = getRepository().findById(id).get();
+		System.out.println(deleteVegStock);
+		getRepository().delete(deleteVegStock);
+		return deleteVegStock;
 	}
 	
-
 }
