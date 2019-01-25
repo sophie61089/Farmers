@@ -1,5 +1,8 @@
 package com.casestudy.farmingapp.farmers;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 
 @Entity
 @Table(name="Customer_Table")
@@ -26,7 +31,8 @@ public class Farmer {
 	
 	@FormParam("sortCode")
 	int sortCode;
-	//Set Orders
+
+	Set<FarmerOrder> farmerOrders = new HashSet<>();
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,4 +70,6 @@ public class Farmer {
 	public void setSortCode(int sortCode) {
 		this.sortCode = sortCode;
 	}
+	
+	
 }
