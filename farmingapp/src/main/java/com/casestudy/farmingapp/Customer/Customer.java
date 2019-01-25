@@ -18,6 +18,17 @@ public class Customer {
 		int customerId;
 		@FormParam("name")
 		String name;
+		@FormParam("address")
+		String address;
+		@FormParam("cardNumber")
+		int cardNumber;
+		@FormParam("cardType")
+		String cardType;
+		@FormParam("cvc")
+		int cvc;
+		@FormParam("expiryDate")
+		String expiryDate;
+		
 
 		@Id 
 		@Column(name="customerId") 
@@ -34,10 +45,42 @@ public class Customer {
 		public void setName(String name) {
 			this.name = name;
 		}
-		
+		public String getAddress() {
+			return address;
+		}
+		public void setAddress(String address) {
+			this.address = address;
+		}
+		public int getCardNumber() {
+			return cardNumber;
+		}
+		public void setCardNumber(int cardNumber) {
+			this.cardNumber = cardNumber;
+		}
+		public String getCardType() {
+			return cardType;
+		}
+		public void setCardType(String cardType) {
+			this.cardType = cardType;
+		}
+		public int getCvc() {
+			return cvc;
+		}
+		public void setCvc(int cvc) {
+			this.cvc = cvc;
+		}
+		public String getExpiryDate() {
+			return expiryDate;
+		}
+		public void setExpiryDate(String expiryDate) {
+			this.expiryDate = expiryDate;
+		}
 		@Override
 		public String toString() {
-			return "Customer [customerId=" + customerId + ", name=" + name + "]";
+			return "Customer [customerId=" + customerId + ", name=" + name + ", address=" + address + ", cardNumber="
+					+ cardNumber + ", cardType=" + cardType + ", cvc=" + cvc + ", expiryDate=" + expiryDate + "]";
 		}
+		
+		
 
 }
