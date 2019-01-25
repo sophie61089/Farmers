@@ -11,6 +11,7 @@ import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { ProduceUploadComponent } from './produce-upload/produce-upload.component';
 import { FarmerAccountComponent } from './farmer-account/farmer-account.component';
 import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
     FarmerLoginComponent,
     ProduceUploadComponent,
     FarmerAccountComponent,
-    FarmerHomeComponent
+    FarmerHomeComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
