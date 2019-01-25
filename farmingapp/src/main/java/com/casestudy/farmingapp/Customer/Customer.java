@@ -10,7 +10,7 @@ import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name="Farmers_Customer_Table")
+@Table(name="Customer_Table")
 @XmlRootElement
 public class Customer {
 
