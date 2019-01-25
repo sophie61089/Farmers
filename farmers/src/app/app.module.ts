@@ -20,7 +20,8 @@ import { FarmerAccountComponent } from './farmer-account/farmer-account.componen
     CustomerAccountComponent,
     FarmerLoginComponent,
     ProduceUploadComponent,
-    FarmerAccountComponent
+    FarmerAccountComponent,
+  
   ],
   imports: [
     BrowserModule,
