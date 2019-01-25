@@ -7,6 +7,7 @@ import { CustomerAccountComponent } from './customer-account/customer-account.co
 import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { ProduceUploadComponent } from './produce-upload/produce-upload.component';
 import { FarmerAccountComponent } from './farmer-account/farmer-account.component';
+import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'farmerlogin',component:FarmerLoginComponent},
   {path:'produceupload',component:ProduceUploadComponent},
   {path:'farmeraccount',component:FarmerAccountComponent},
+  {path:'farmerhome',component:FarmerHomeComponent},
 ];
 
 @NgModule({
