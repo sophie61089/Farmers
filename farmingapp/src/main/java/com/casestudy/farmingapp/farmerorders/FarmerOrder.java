@@ -1,6 +1,8 @@
 package com.casestudy.farmingapp.farmerorders;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -58,6 +60,8 @@ public class FarmerOrder {
 		this.unitPrice = unitPrice;
 	}
 
+	@ManyToOne
+	@JoinColumn(name="FK_FarmerId")
 	public Farmer getFarmer() {
 		return farmer;
 	}

@@ -3,10 +3,13 @@ package com.casestudy.farmingapp.farmers;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -70,6 +73,15 @@ public class Farmer {
 	public void setSortCode(int sortCode) {
 		this.sortCode = sortCode;
 	}
+	
+	@OneToMany(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	public Set<FarmerOrder> getFarmerOrders() {
+		return farmerOrders;
+	}
+	public void setFarmerOrders(Set<FarmerOrder> farmerOrders) {
+		this.farmerOrders = farmerOrders;
+	}
+	
 	
 	
 }
