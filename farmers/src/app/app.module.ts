@@ -10,6 +10,7 @@ import { CustomerAccountComponent } from './customer-account/customer-account.co
 import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { ProduceUploadComponent } from './produce-upload/produce-upload.component';
 import { FarmerAccountComponent } from './farmer-account/farmer-account.component';
+import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FarmerAccountComponent } from './farmer-account/farmer-account.componen
     CustomerAccountComponent,
     FarmerLoginComponent,
     ProduceUploadComponent,
-    FarmerAccountComponent
+    FarmerAccountComponent,
+    FarmerHomeComponent
   ],
   imports: [
     BrowserModule,
