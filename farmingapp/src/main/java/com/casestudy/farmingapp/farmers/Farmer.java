@@ -10,10 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.casestudy.farmingapp.farmerlogin.FarmerLogin;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 
 @Entity
@@ -35,6 +37,17 @@ public class Farmer {
 	@FormParam("sortCode")
 	int sortCode;
 
+	FarmerLogin farmerlogin;
+	
+	@OneToOne(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	public FarmerLogin getFarmerlogin() {
+		return farmerlogin;
+	}
+	public void setFarmerlogin(FarmerLogin farmerlogin) {
+		this.farmerlogin = farmerlogin;
+	}
+	
+	
 	Set<FarmerOrder> farmerOrders = new HashSet<>();
 	
 	@Id
