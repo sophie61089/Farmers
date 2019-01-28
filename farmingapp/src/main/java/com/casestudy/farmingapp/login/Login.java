@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Login {
 
+	@FormParam("loginId")
 	int loginId;
 	
 	@FormParam("username")

@@ -1,4 +1,4 @@
-package com.casestudy.farming.app.VegStock;
+package com.casestudy.farmingapp.vegstock;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,10 +14,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class VegStock {
 
 	int id;
+	
 	@FormParam("name")
 	String name;
+	
 	@FormParam("amount")
 	int amount;
+	
 	@FormParam("price")
 	double price;
 	
@@ -46,6 +49,11 @@ public class VegStock {
 	}
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	@Override
+	public String toString() {
+		return "VegStock [id=" + id + ", name=" + name + ", amount=" + amount + ", price=" + price + "]";
+
 	}
 	
 	
