@@ -1,4 +1,4 @@
-package com.casestudy.farmingapp.login;
+package com.casestudy.farmingapp.farmerlogin;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,13 +9,13 @@ import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.casestudy.farmingapp.Customer.Customer;
+import com.casestudy.farmingapp.farmers.Farmer;
 
 @Entity
-@Table(name="Login_Table")
+@Table(name="Farmer_Login_Table")
 @XmlRootElement
-public class Login {
-
+public class FarmerLogin {
+	
 	@FormParam("loginId")
 	int loginId;
 	
@@ -25,7 +25,18 @@ public class Login {
 	@FormParam("password")
 	String password;
 	
-	Customer customer;
+	Farmer farmer;
+	
+	@OneToOne
+	@MapsId
+	@JoinColumn(name = "farmerId")
+	public Farmer getFarmer() {
+		return farmer;
+	}
+
+	public void setFarmer(Farmer farmer) {
+		this.farmer = farmer;
+	}
 
 	@Id
 	public int getLoginId() {
@@ -52,17 +63,4 @@ public class Login {
 		this.password = password;
 	}
 
-	@OneToOne
-	@MapsId
-	@JoinColumn(name = "customerId")
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-	
-	
-	
 }

@@ -5,10 +5,13 @@ import org.springframework.stereotype.Component;
 
 import com.casestudy.farmingapp.farmers.FarmerAccessAPI;
 import com.casestudy.farmingapp.login.Login;
+import com.casestudy.farmingapp.login.LoginAccessAPI;
 import com.casestudy.farmingapp.vegstock.VegStock;
 import com.casestudy.farmingapp.vegstock.VegStockAccessAPI;
 import com.casestudy.farmingapp.Customer.CustomerAccessAPI;
+import com.casestudy.farmingapp.farmerlogin.FarmerLoginAccessAPI;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
+import com.casestudy.farmingapp.farmerorders.FarmerOrderAccessAPI;
 
 @Component
 public class ServiceConfig extends ResourceConfig{
@@ -18,8 +21,8 @@ public class ServiceConfig extends ResourceConfig{
 		register(CustomerAccessAPI.class);
 		register(FarmerAccessAPI.class);
 		register(VegStockAccessAPI.class);
-		register(FarmerOrder.class);
-		register(VegStock.class);
-		register(Login.class);
+		register(FarmerOrderAccessAPI.class);
+		register(LoginAccessAPI.class);
+		register(FarmerLoginAccessAPI.class);
 	}
 }

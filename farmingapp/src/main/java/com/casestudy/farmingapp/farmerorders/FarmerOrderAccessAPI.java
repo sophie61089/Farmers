@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
@@ -22,6 +23,7 @@ public class FarmerOrderAccessAPI {
 		return repository;
 	}
 
+	@Autowired
 	public void setRepository(FarmerOrderJPARepository repository) {
 		this.repository = repository;
 	}
