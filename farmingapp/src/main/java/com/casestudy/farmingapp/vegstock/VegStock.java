@@ -53,6 +53,7 @@ public class VegStock {
 	@Override
 	public String toString() {
 		return "VegStock [id=" + id + ", name=" + name + ", amount=" + amount + ", price=" + price + "]";
+
 	}
 	
 	

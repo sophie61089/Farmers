@@ -12,6 +12,7 @@ import { ProduceUploadComponent } from './produce-upload/produce-upload.componen
 import { FarmerAccountComponent } from './farmer-account/farmer-account.component';
 import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FindUsComponent } from './find-us/find-us.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     ProduceUploadComponent,
     FarmerAccountComponent,
     FarmerHomeComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FindUsComponent
   ],
   imports: [
     BrowserModule,
