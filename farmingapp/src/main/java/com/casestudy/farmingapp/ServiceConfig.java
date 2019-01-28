@@ -9,6 +9,7 @@ import com.casestudy.farmingapp.vegstock.VegStock;
 import com.casestudy.farmingapp.vegstock.VegStockAccessAPI;
 import com.casestudy.farmingapp.Customer.CustomerAccessAPI;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
+import com.casestudy.farmingapp.farmerorders.FarmerOrderAccessAPI;
 
 @Component
 public class ServiceConfig extends ResourceConfig{
@@ -18,8 +19,6 @@ public class ServiceConfig extends ResourceConfig{
 		register(CustomerAccessAPI.class);
 		register(FarmerAccessAPI.class);
 		register(VegStockAccessAPI.class);
-		register(FarmerOrder.class);
-		register(VegStock.class);
-		register(Login.class);
+		register(FarmerOrderAccessAPI.class);
 	}
 }

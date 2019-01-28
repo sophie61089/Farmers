@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Customer {
 
-		@FormParam("customerId")
+		
 		int customerId;
 		@FormParam("name")
 		String name;
@@ -31,7 +31,6 @@ public class Customer {
 		
 
 		@Id 
-		@Column(name="customerId") 
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
 		public int getCustomerId() {
 			return customerId;
