@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 
 @Entity
-@Table(name="Customer_Table")
+@Table(name="Farmer_Table")
 @XmlRootElement
 public class Farmer {
 	
