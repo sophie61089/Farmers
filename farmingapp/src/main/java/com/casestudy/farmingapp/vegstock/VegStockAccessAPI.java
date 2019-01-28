@@ -23,10 +23,12 @@ public class VegStockAccessAPI {
 	public VegStockJPARepository getRepository() {
 		return repository;
 	}
+	
 	@Autowired
 	public void setRepository(VegStockJPARepository repository) {
 		this.repository = repository;
 	}
+	
 	@Path("/list") 
 	@GET
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
@@ -67,7 +69,7 @@ public class VegStockAccessAPI {
 	@POST
 	@Path("/removestock")
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public VegStock updateDeleteVegStock(@FormParam("id")int id, @FormParam("added")int used) {
+	public VegStock updateDeleteVegStock(@FormParam("id")int id, @FormParam("used")int used) {
 		VegStock updatedVegStock = getRepository().findById(id).get();
 		int currentStock = updatedVegStock.getAmount();
 		updatedVegStock.setAmount(currentStock - used);
