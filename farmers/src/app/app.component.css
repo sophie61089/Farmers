@@ -25,4 +25,8 @@
     background-color: #4CAF50;
     color: white;
   }
-
+#Main-h1 {
+  color: blue;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 50px;
+}
