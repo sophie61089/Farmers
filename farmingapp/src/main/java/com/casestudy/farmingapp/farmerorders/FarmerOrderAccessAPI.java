@@ -22,11 +22,7 @@ public class FarmerOrderAccessAPI {
 	public FarmerOrderJPARepository getRepository() {
 		return repository;
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> branch 'master' of https://github.com/sophie61089/Farmers.git
 	@Autowired
 	public void setRepository(FarmerOrderJPARepository repository) {
 		this.repository = repository;
