@@ -1,4 +1,4 @@
-package com.casestudy.farming.app.VegStock;
+package com.casestudy.farmingapp.vegstock;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;

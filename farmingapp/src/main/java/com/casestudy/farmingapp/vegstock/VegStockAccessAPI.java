@@ -1,4 +1,4 @@
-package com.casestudy.farming.app.VegStock;
+package com.casestudy.farmingapp.vegstock;
 
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
