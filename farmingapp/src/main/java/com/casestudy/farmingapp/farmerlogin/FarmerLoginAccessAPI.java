@@ -1,4 +1,4 @@
-package farmerlogin;
+package com.casestudy.farmingapp.farmerlogin;
 
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;

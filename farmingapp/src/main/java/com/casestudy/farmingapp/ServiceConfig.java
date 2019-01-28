@@ -8,10 +8,8 @@ import com.casestudy.farmingapp.login.Login;
 import com.casestudy.farmingapp.login.LoginAccessAPI;
 import com.casestudy.farmingapp.vegstock.VegStock;
 import com.casestudy.farmingapp.vegstock.VegStockAccessAPI;
-
-import farmerlogin.FarmerLoginAccessAPI;
-
 import com.casestudy.farmingapp.Customer.CustomerAccessAPI;
+import com.casestudy.farmingapp.farmerlogin.FarmerLoginAccessAPI;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 import com.casestudy.farmingapp.farmerorders.FarmerOrderAccessAPI;
 

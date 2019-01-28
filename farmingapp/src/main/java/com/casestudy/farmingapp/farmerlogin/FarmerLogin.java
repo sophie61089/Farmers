@@ -1,4 +1,4 @@
-package farmerlogin;
+package com.casestudy.farmingapp.farmerlogin;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
