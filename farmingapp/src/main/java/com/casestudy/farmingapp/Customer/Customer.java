@@ -1,13 +1,18 @@
 package com.casestudy.farmingapp.Customer;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.casestudy.farmingapp.login.Login;
 
 @Entity
 @Table(name="Customer_Table")
@@ -28,6 +33,8 @@ public class Customer {
 		int cvc;
 		@FormParam("expiryDate")
 		String expiryDate;
+		
+		Login login;
 		
 
 		@Id 
@@ -74,6 +81,15 @@ public class Customer {
 		public void setExpiryDate(String expiryDate) {
 			this.expiryDate = expiryDate;
 		}
+		
+		@OneToOne(mappedBy="customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+		public Login getLogin() {
+			return login;
+		}
+		public void setLogin(Login login) {
+			this.login = login;
+		}
+		
 		@Override
 		public String toString() {
 			return "Customer [customerId=" + customerId + ", name=" + name + ", address=" + address + ", cardNumber="
