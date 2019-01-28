@@ -1,4 +1,4 @@
-package com.casestudy.farming.app.VegStock;
+package com.casestudy.farmingapp.vegstock;
 
 
 import javax.ws.rs.BeanParam;
@@ -23,6 +23,7 @@ public class VegStockAccessAPI {
 	public VegStockJPARepository getRepository() {
 		return repository;
 	}
+	
 	@Autowired
 	public void setRepository(VegStockJPARepository repository) {
 		this.repository = repository;
@@ -50,15 +51,6 @@ public class VegStockAccessAPI {
 		getRepository().save(newVegStock);
 		return newVegStock;
 	}
-	
-//	@POST
-//	@Path("/update")
-//	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-//	public VegStock updateVegStock(@BeanParam VegStock newVegStock) {
-//	//	getRepository().merge(newVegStock); 
-//		return newVegStock;
-//	}
-	
 	
 	@DELETE
 	@Path("/delete")

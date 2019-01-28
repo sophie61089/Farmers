@@ -1,4 +1,4 @@
-package com.casestudy.farming.app.VegStock;
+package com.casestudy.farmingapp.vegstock;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
