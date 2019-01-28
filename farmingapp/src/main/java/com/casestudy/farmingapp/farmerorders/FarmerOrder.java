@@ -1,6 +1,9 @@
 package com.casestudy.farmingapp.farmerorders;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -28,6 +31,8 @@ public class FarmerOrder {
 	
 	Farmer farmer;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getOrderid() {
 		return orderid;
 	}
