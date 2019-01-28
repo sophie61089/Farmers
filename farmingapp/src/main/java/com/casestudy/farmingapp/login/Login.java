@@ -2,9 +2,14 @@ package com.casestudy.farmingapp.login;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.casestudy.farmingapp.Customer.Customer;
 
 @Entity
 @Table(name="Login_Table")
@@ -19,6 +24,8 @@ public class Login {
 	
 	@FormParam("password")
 	String password;
+	
+	Customer customer;
 
 	@Id
 	public int getLoginId() {
@@ -43,6 +50,17 @@ public class Login {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@OneToOne
+	@MapsId
+	@JoinColumn(name = "customerId")
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	
 	
