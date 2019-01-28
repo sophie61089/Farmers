@@ -8,6 +8,9 @@ import com.casestudy.farmingapp.login.Login;
 import com.casestudy.farmingapp.login.LoginAccessAPI;
 import com.casestudy.farmingapp.vegstock.VegStock;
 import com.casestudy.farmingapp.vegstock.VegStockAccessAPI;
+
+import farmerlogin.FarmerLoginAccessAPI;
+
 import com.casestudy.farmingapp.Customer.CustomerAccessAPI;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 import com.casestudy.farmingapp.farmerorders.FarmerOrderAccessAPI;
@@ -19,14 +22,9 @@ public class ServiceConfig extends ResourceConfig{
 		register(CORSFilter.class);
 		register(CustomerAccessAPI.class);
 		register(FarmerAccessAPI.class);
-<<<<<<< HEAD
 		register(VegStockAccessAPI.class);
 		register(FarmerOrderAccessAPI.class);
-=======
-		register(VegStockAccessAPI.class);
-		register(FarmerOrderAccessAPI.class);
-		register(VegStockAccessAPI.class);
 		register(LoginAccessAPI.class);
->>>>>>> branch 'master' of https://github.com/sophie61089/Farmers.git
+		register(FarmerLoginAccessAPI.class);
 	}
 }
