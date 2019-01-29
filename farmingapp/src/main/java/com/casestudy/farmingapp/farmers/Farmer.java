@@ -16,7 +16,6 @@ import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-import com.casestudy.farmingapp.farmerlogin.FarmerLogin;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 
 @Entity
@@ -41,6 +40,8 @@ public class Farmer {
 	@FormParam("email")
 	String email;
 	
+	@FormParam("password")
+	String password;
 	
 
 	/*FarmerLogin farmerlogin;
@@ -106,6 +107,13 @@ public class Farmer {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }
