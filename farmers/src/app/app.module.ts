@@ -15,6 +15,9 @@ import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { HelpComponent } from './help/help.component';
+import { FindUsComponent } from './find-us/find-us.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,11 @@ import { CustomerLoginComponent } from './customer-login/customer-login.componen
     FarmerHomeComponent,
     ContactUsComponent,
     FarmerOrdersComponent,
-    CustomerLoginComponent
+    CustomerLoginComponent,
+    TermsAndConditionsComponent,
+    HelpComponent,
+    FindUsComponent,
+
   ],
   imports: [
     BrowserModule,
