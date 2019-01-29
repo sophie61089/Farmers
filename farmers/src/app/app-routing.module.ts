@@ -11,6 +11,9 @@ import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { HelpComponent } from './help/help.component';
+import { FindUsComponent } from './find-us/find-us.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -23,7 +26,10 @@ const routes: Routes = [
   {path:'farmerhome',component:FarmerHomeComponent},
   {path:'contactus',component:ContactUsComponent},
   {path:'farmerorders',component:FarmerOrdersComponent},
-  {path:'customerlogin',component:CustomerLoginComponent}
+  {path:'customerlogin',component:CustomerLoginComponent},
+  {path:'termsandconditions',component:TermsAndConditionsComponent},
+  {path:'help',component:HelpComponent},
+  {path:'findus',component:FindUsComponent},
 ];
 
 @NgModule({
