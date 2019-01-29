@@ -15,6 +15,7 @@ import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
 import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CustomerLoginComponent } from './customer-login/customer-login.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
