@@ -5,30 +5,35 @@
     <a routerLink="/products">Products</a>
     <a routerLink="/order">Orders</a>
     <a routerLink="/customeraccount">Customer Account</a>
+    <a routerLink="/customerlogin">Customer Login</a>
     <a routerLink="/farmerlogin">Farmer Login</a>
     <a routerLink="/farmerhome">Farmer Home</a>
     <a routerLink="/produceupload">Produce Upload</a>
     <a routerLink="/farmeraccount">Farmer Account</a>   
     <a routerLink="/contactus">Contact Us</a>  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-    <a href="#" class="fa fa-facebook"></a>
-    <a href="#" class="fa fa-twitter"></a>
-    <a href="#" class="fa fa-linkedin"></a>
-    <form class="example" action="action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-    </form>
-</div>
+
+    <a href="#" class="fa fa-facebook"style="width:20px;height:10px;"></a>
+    <a href="#" class="fa fa-twitter"style="width:20px;height:10px;"></a>
+    <a href="#" class="fa fa-linkedin"style="width:20px;height:10px;"></a>
+
+  </div>
 
 </div>
 
 <body>
-  <div class="logo">
-        <img src="/assets/logo1.png" alt="Straight In My Basket" ALIGN=”left” > </div>
-
+        <img src="/assets/logo1.png" alt="Straight In My Basket" ALIGN=”left” >
   <div class="topnav">
-    <a href="#">Terms and Conditions</a>
-    <a href="#">Help</a>
-    <a href="#">Find Us</a>
+    <a href="/termsandconditions">Terms and Conditions</a>
+    <a href="/help">Help</a>
+    <a href="/findus">Find Us</a>    
+  </div>
+  <div id="myOverlay" class="overlay">
+    <div class="overlay-content">
+      <form action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+      </form>
+    </div>
   </div>
 <router-outlet></router-outlet>
 
