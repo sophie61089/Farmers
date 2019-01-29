@@ -15,7 +15,7 @@ export class FarmerAccountComponent implements OnInit {
   editSortCode:boolean
 
   constructor(private farmService:FarmerService) {
-    this.farmer={name:"old mcdonald", address:"123 fake st",accountNumber:2344353,sortCode:39487}
+    this.farmer={name:"old mcdonald", address:"123 fake st",accountNumber:2344353,sortCode:39487,email:"fake@mastek.com",password:"root"}
     this.editName=false
     this.editAddress=false
   }
