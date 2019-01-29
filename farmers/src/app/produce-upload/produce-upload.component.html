@@ -4,8 +4,20 @@
 
 <form>
   <tr>
-    <td><input placeholder="Name" size="8" #pname></td>
-    <td><input placeholder="Quantity" size="8" #ploc></td>
-    <td><input type="submit" value="Add"></td>
+    <td>
+      <select required #veg>
+        <option>-----Select-----</option>
+        <option *ngFor="let v of vegStock; let i=index" value={{v.id}}>{{v.name}}</option>
+      </select>
+    </td>
+    <td>
+      <input placeholder="Quantity" size="8" #quantity>
+    </td>
+    <td>
+      Price
+    </td>
+    <td>
+      <input type="submit" value="Add">
+    </td>
   </tr>
 </form>
