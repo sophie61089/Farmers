@@ -1,3 +1,70 @@
-<p>
-  farmer-account works!
-</p>
+<h2>
+  Your Account
+</h2>
+
+<table>
+
+  <tr>
+    <th>Name:</th>
+    <td>
+      {{farmer.name}}
+      <button (click)="editNameToggle()">Edit</button>
+    </td>
+
+    <td *ngIf="editName">
+        <div class="form-group">
+          <input>
+          <button>Submit</button>
+        </div>
+    </td>
+
+  </tr>
+
+  
+
+  <tr>
+      <th>Address:</th>
+      <td>
+        {{farmer.address}}
+        <button (click)="editAddressToggle()">Edit</button>
+      </td>
+
+      <td *ngIf="editAddress">
+          <div class="form-group">
+            <input>
+            <button>Submit</button>
+          </div>
+      </td>
+  </tr>
+
+  <tr>
+      <th>Account number:</th>
+      <td>
+          {{farmer.accountNumber}}
+        <button (click)="editAccNoToggle()">Edit</button>
+      </td>
+
+      <td *ngIf="editAccNo">
+          <div class="form-group">
+            <input>
+            <button>Submit</button>
+          </div>
+      </td>
+  </tr>
+
+  <tr>
+      <th>Sort code:</th>
+      <td>
+        {{farmer.sortCode}}
+        <button (click)="editSortCodeToggle()">Edit</button>
+      </td>
+
+      <td *ngIf="editSortCode">
+          <div class="form-group">
+            <input>
+            <button>Submit</button>
+          </div>
+      </td>
+  </tr>
+
+</table>
