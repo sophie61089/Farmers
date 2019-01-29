@@ -1,10 +1,7 @@
 package com.casestudy.farmingapp.farmerlogin;
 
 import javax.persistence.CascadeType;
-<<<<<<< HEAD
-=======
 import javax.persistence.Column;
->>>>>>> branch 'master' of https://github.com/sophie61089/Farmers.git
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
