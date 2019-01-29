@@ -23,6 +23,8 @@ public class Customer {
 		int customerId;
 		@FormParam("name")
 		String name;
+		@FormParam("email")
+		String email;
 		@FormParam("address")
 		String address;
 		@FormParam("cardNumber")
@@ -33,10 +35,9 @@ public class Customer {
 		int cvc;
 		@FormParam("expiryDate")
 		String expiryDate;
+		//@FormParam("browniePoints")
+		//int browniePoints;
 		
-		Login login;
-		
-
 		@Id 
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
 		public int getCustomerId() {
@@ -50,6 +51,12 @@ public class Customer {
 		}
 		public void setName(String name) {
 			this.name = name;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
 		}
 		public String getAddress() {
 			return address;
@@ -82,20 +89,4 @@ public class Customer {
 			this.expiryDate = expiryDate;
 		}
 		
-		@OneToOne(mappedBy="customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-		public Login getLogin() {
-			return login;
-		}
-		public void setLogin(Login login) {
-			this.login = login;
-		}
-		
-		@Override
-		public String toString() {
-			return "Customer [customerId=" + customerId + ", name=" + name + ", address=" + address + ", cardNumber="
-					+ cardNumber + ", cardType=" + cardType + ", cvc=" + cvc + ", expiryDate=" + expiryDate + "]";
-		}
-		
-		
-
 }

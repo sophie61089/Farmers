@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import com.casestudy.farmingapp.farmerlogin.FarmerLogin;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
@@ -42,7 +43,7 @@ public class Farmer {
 	
 	
 
-	FarmerLogin farmerlogin;
+	/*FarmerLogin farmerlogin;
 	
 	@OneToOne(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	public FarmerLogin getFarmerlogin() {
@@ -50,7 +51,7 @@ public class Farmer {
 	}
 	public void setFarmerlogin(FarmerLogin farmerlogin) {
 		this.farmerlogin = farmerlogin;
-	}
+	}*/
 	
 	
 	Set<FarmerOrder> farmerOrders = new HashSet<>();
@@ -93,6 +94,7 @@ public class Farmer {
 	}
 	
 	@OneToMany(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@XmlTransient
 	public Set<FarmerOrder> getFarmerOrders() {
 		return farmerOrders;
 	}
@@ -105,7 +107,5 @@ public class Farmer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 	
 }

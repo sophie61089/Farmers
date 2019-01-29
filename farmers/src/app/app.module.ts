@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,9 +13,9 @@ import { ProduceUploadComponent } from './produce-upload/produce-upload.componen
 import { FarmerAccountComponent } from './farmer-account/farmer-account.component';
 import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
-import { HelpComponent } from './help/help.component';
-import { FindUsComponent } from './find-us/find-us.component';
+import { FarmerOrdersComponent } from './farmer-orders/farmer-orders.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -28,13 +29,14 @@ import { FindUsComponent } from './find-us/find-us.component';
     FarmerAccountComponent,
     FarmerHomeComponent,
     ContactUsComponent,
-    TermsAndConditionsComponent,
-    HelpComponent,
-    FindUsComponent
+    FarmerOrdersComponent,
+    CustomerLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
