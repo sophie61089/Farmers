@@ -34,9 +34,6 @@ public class Customer {
 		@FormParam("expiryDate")
 		String expiryDate;
 		
-		Login login;
-		
-
 		@Id 
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
 		public int getCustomerId() {
@@ -81,15 +78,7 @@ public class Customer {
 		public void setExpiryDate(String expiryDate) {
 			this.expiryDate = expiryDate;
 		}
-		
-		@OneToOne(mappedBy="customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-		public Login getLogin() {
-			return login;
-		}
-		public void setLogin(Login login) {
-			this.login = login;
-		}
-		
+				
 		@Override
 		public String toString() {
 			return "Customer [customerId=" + customerId + ", name=" + name + ", address=" + address + ", cardNumber="
