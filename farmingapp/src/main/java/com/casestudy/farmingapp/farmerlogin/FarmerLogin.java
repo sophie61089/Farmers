@@ -16,9 +16,6 @@ import com.casestudy.farmingapp.farmers.Farmer;
 @XmlRootElement
 public class FarmerLogin {
 	
-	@FormParam("loginId")
-	int loginId;
-	
 	@FormParam("username")
 	String username;
 	
@@ -37,16 +34,8 @@ public class FarmerLogin {
 	public void setFarmer(Farmer farmer) {
 		this.farmer = farmer;
 	}
-
+	
 	@Id
-	public int getLoginId() {
-		return loginId;
-	}
-
-	public void setLoginId(int loginId) {
-		this.loginId = loginId;
-	}
-
 	public String getUsername() {
 		return username;
 	}
