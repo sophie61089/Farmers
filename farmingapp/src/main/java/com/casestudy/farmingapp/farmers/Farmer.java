@@ -37,6 +37,11 @@ public class Farmer {
 	
 	@FormParam("sortCode")
 	int sortCode;
+	
+	@FormParam("email")
+	String email;
+	
+	
 
 	/*FarmerLogin farmerlogin;
 	
@@ -95,6 +100,12 @@ public class Farmer {
 	}
 	public void setFarmerOrders(Set<FarmerOrder> farmerOrders) {
 		this.farmerOrders = farmerOrders;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }
