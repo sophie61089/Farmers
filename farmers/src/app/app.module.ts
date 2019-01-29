@@ -18,6 +18,7 @@ import { CustomerLoginComponent } from './customer-login/customer-login.componen
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 import { HelpComponent } from './help/help.component';
 import { FindUsComponent } from './find-us/find-us.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FindUsComponent } from './find-us/find-us.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,6 @@ import com.casestudy.farmingapp.login.LoginAccessAPI;
 import com.casestudy.farmingapp.vegstock.VegStock;
 import com.casestudy.farmingapp.vegstock.VegStockAccessAPI;
 import com.casestudy.farmingapp.Customer.CustomerAccessAPI;
-import com.casestudy.farmingapp.farmerlogin.FarmerLoginAccessAPI;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 import com.casestudy.farmingapp.farmerorders.FarmerOrderAccessAPI;
 
@@ -23,6 +22,5 @@ public class ServiceConfig extends ResourceConfig{
 		register(VegStockAccessAPI.class);
 		register(FarmerOrderAccessAPI.class);
 		register(LoginAccessAPI.class);
-		register(FarmerLoginAccessAPI.class);
 	}
 }

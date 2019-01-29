@@ -14,8 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
-import com.casestudy.farmingapp.farmerlogin.FarmerLogin;
 import com.casestudy.farmingapp.farmerorders.FarmerOrder;
 
 @Entity
@@ -36,17 +36,12 @@ public class Farmer {
 	
 	@FormParam("sortCode")
 	int sortCode;
-
-	FarmerLogin farmerlogin;
 	
-	@OneToOne(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	public FarmerLogin getFarmerlogin() {
-		return farmerlogin;
-	}
-	public void setFarmerlogin(FarmerLogin farmerlogin) {
-		this.farmerlogin = farmerlogin;
-	}
+	@FormParam("email")
+	String email;
 	
+	@FormParam("password")
+	String password;
 	
 	Set<FarmerOrder> farmerOrders = new HashSet<>();
 	
@@ -88,13 +83,25 @@ public class Farmer {
 	}
 	
 	@OneToMany(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@XmlTransient
 	public Set<FarmerOrder> getFarmerOrders() {
 		return farmerOrders;
 	}
 	public void setFarmerOrders(Set<FarmerOrder> farmerOrders) {
 		this.farmerOrders = farmerOrders;
 	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
-	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 }

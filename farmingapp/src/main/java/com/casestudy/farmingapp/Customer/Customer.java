@@ -38,9 +38,6 @@ public class Customer {
 		//@FormParam("browniePoints")
 		//int browniePoints;
 		
-		Login login;
-		
-
 		@Id 
 		@GeneratedValue(strategy=GenerationType.IDENTITY) 
 		public int getCustomerId() {
@@ -92,11 +89,4 @@ public class Customer {
 			this.expiryDate = expiryDate;
 		}
 		
-		@OneToOne(mappedBy="customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-		public Login getLogin() {
-			return login;
-		}
-		public void setLogin(Login login) {
-			this.login = login;
-		}
 }
