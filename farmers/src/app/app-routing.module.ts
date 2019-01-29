@@ -9,6 +9,10 @@ import { ProduceUploadComponent } from './produce-upload/produce-upload.componen
 import { FarmerAccountComponent } from './farmer-account/farmer-account.component';
 import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
+import { HelpComponent } from './help/help.component';
+import { FindUsComponent } from './find-us/find-us.component';
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -19,7 +23,10 @@ const routes: Routes = [
   {path:'produceupload',component:ProduceUploadComponent},
   {path:'farmeraccount',component:FarmerAccountComponent},
   {path:'farmerhome',component:FarmerHomeComponent},
-  {path:'contactus',component:ContactUsComponent}
+  {path:'contactus',component:ContactUsComponent},
+  {path:'termsandconditions',component:TermsAndConditionsComponent},
+  {path:'help',component:HelpComponent},
+  {path:'findus',component:FindUsComponent}
 ];
 
 @NgModule({
