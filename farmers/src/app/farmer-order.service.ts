@@ -13,11 +13,11 @@ export class FarmerOrderService {
     this.rootURL="http://localhost:9901/farmerorder"
    }
 
-   getFarmers():Observable<FarmerOrder[]>{
+   getOrders():Observable<FarmerOrder[]>{
     return this.httpservice.get<FarmerOrder[]>(this.rootURL+"/list")
   }
 
-  addFarmer(newOrder:FarmerOrder):Observable<any>{
+  addOrder(newOrder:FarmerOrder):Observable<any>{
     const httpOpts = {
       headers: new HttpHeaders(
        {'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'}
@@ -35,7 +35,7 @@ export class FarmerOrderService {
     )
   }
 
-  deleteFarmer(farmerOrderId:number):Observable<FarmerOrder>{
+  deleteOrder(farmerOrderId:number):Observable<FarmerOrder>{
     return this.httpservice.request<FarmerOrder>('DELETE', this.rootURL+"/delete",
     {
      headers: new HttpHeaders({'Content-Type': 'text/plain'}),
