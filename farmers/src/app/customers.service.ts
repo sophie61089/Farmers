@@ -22,7 +22,7 @@ export class CustomersService {
             {'Content-Type':
               'application/x-www-form-urlencoded;charset=UTF-8'})
       }
-      var reqBody="address="+newCustomer.address+"&cardNumber="
+      var reqBody="password="+newCustomer.password+"address="+newCustomer.address+"&cardNumber="
       +newCustomer.cardNumber+"&cardType="+newCustomer.cardType+"&cvc="+newCustomer.cvc+"&expiryDate="+newCustomer.expiryDate+"&name="+newCustomer.name+"&email="+newCustomer.email
 
       return this.httpsvc.post<Customer>(this.rootURL+"/register",reqBody,http0pts)

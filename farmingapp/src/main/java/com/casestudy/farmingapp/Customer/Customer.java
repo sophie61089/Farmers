@@ -22,6 +22,8 @@ public class Customer {
 		int customerId;
 		@FormParam("name")
 		String name;
+		@FormParam("password")
+		String password;
 		@FormParam("email")
 		String email;
 		@FormParam("address")
@@ -50,6 +52,12 @@ public class Customer {
 		}
 		public void setName(String name) {
 			this.name = name;
+		}
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
 		}
 		public String getEmail() {
 			return email;

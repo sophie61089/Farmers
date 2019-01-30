@@ -48,11 +48,15 @@ public class FarmerAccessAPI {
 		this.orderRepository = orderRepository;
 	}
 
-	@Path("/list")
+	@Path("/login")
 	@GET
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public Iterable<Farmer> listFarmers(){
-		return getRepository().findAll();
+	public Farmer farmerLogin(@QueryParam("username") String email,@QueryParam("password") String password){
+		Farmer correctFarmer = getRepository().findByEmail(email).get(0);
+		if (correctFarmer.getPassword().equals(password))
+			return correctFarmer;
+		else
+			return null;
 	}
 	
 	@POST
