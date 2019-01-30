@@ -3,4 +3,6 @@ export interface Farmer {
     address:string;
     accountNumber:number;
     sortCode:number;
+    email:string;
+    password:string;
 }

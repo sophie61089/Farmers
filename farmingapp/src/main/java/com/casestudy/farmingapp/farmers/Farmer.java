@@ -43,18 +43,6 @@ public class Farmer {
 	@FormParam("password")
 	String password;
 	
-
-	/*FarmerLogin farmerlogin;
-	
-	@OneToOne(mappedBy="farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	public FarmerLogin getFarmerlogin() {
-		return farmerlogin;
-	}
-	public void setFarmerlogin(FarmerLogin farmerlogin) {
-		this.farmerlogin = farmerlogin;
-	}*/
-	
-	
 	Set<FarmerOrder> farmerOrders = new HashSet<>();
 	
 	@Id

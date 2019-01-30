@@ -1,6 +1,7 @@
 package com.casestudy.farmingapp.vegstock;
 
 
+import javax.transaction.Transactional;
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -9,6 +10,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +31,19 @@ public class VegStockAccessAPI {
 		this.repository = repository;
 	}
 	
-	@Path("/list") 
 	@GET
+	@Path("/list") 
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public Iterable<VegStock> listVegStock(){
 		return getRepository().findAll();
+	}
+	
+	@GET
+	@Path("/find")
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	public VegStock findById(@QueryParam("id")int id) {
+		VegStock veg = getRepository().findById(id).get();
+		return veg;
 	}
 	
 	@POST
