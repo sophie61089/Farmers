@@ -14,8 +14,8 @@ export class FarmerService {
     this.rootURL="http://localhost:9901/farmer"
    }
 
-   getFarmers():Observable<Farmer[]>{
-     return this.httpservice.get<Farmer[]>(this.rootURL+"/list")
+   farmerLogin(username:String, password:String):Observable<Farmer[]>{
+     return this.httpservice.get<Farmer[]>(this.rootURL+"/login?username="+username+"&password="+password)
    }
 
    addFarmer(newFarmer:Farmer):Observable<any>{
