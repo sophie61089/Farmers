@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Farmer } from '../farmer';
+import { FarmerService } from '../farmer.service';
 
 @Component({
   selector: 'app-farmer-home',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerHomeComponent implements OnInit {
 
-  constructor() { }
+  farmer:Farmer
+
+  constructor(private farmsvc: FarmerService) {
+
+   }
 
   ngOnInit() {
   }

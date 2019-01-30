@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerService } from '../farmer.service';
 import { Farmer } from '../farmer';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-farmer-account',
@@ -14,10 +15,10 @@ export class FarmerAccountComponent implements OnInit {
   editAccNo:boolean
   editSortCode:boolean
 
-  constructor(private farmService:FarmerService) {
-    this.farmer={name:"old mcdonald", address:"123 fake st",accountNumber:2344353,sortCode:39487,email:"fake@mastek.com",password:"root"}
-    this.editName=false
-    this.editAddress=false
+  farmerDetailsSubscription:Subscription
+
+  constructor(private farmsvc:FarmerService) {
+    this.farmer={name:"",address:"",accountNumber:0,sortCode:0,email:"",password:""}
   }
 
   editNameToggle() {
@@ -37,6 +38,7 @@ export class FarmerAccountComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.farmerDetailsSubscription=this.farmsvc.farmerDetails.subscribe(farmer => { this.farmer = farmer; });
   }
 
 }

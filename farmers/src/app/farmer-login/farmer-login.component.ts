@@ -13,18 +13,21 @@ export class FarmerLoginComponent implements OnInit {
   farmer:Farmer
 
 
-  constructor(private farmsvc: FarmerService) { }
+  constructor(private farmsvc: FarmerService) {
+    this.farmer={name:"",address:"",accountNumber:0,sortCode:6,email:"",password:""}
+   }
 
-  ngOnInit() {
-  }
+  
 
   farmerLogin(username:string, password:string){
     this.farmsvc.farmerLogin(username,password).subscribe(
-      res=>{
-        // pull the data from service
-          res=>{ this.farmer=res }
-      }
+      res=>{ this.farmer=res }
     )
+
+    this.farmsvc.sendFarmer(this.farmer);
+  }
+
+  ngOnInit() {
   }
 
 }

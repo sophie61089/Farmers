@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Farmer } from './farmer';
 import { FarmerOrder } from './farmer-order';
 
@@ -10,20 +10,29 @@ import { FarmerOrder } from './farmer-order';
 export class FarmerService {
 
   rootURL:String
+
+  farmerDetailsSource = new Subject<Farmer>();
+  farmerDetails=this.farmerDetailsSource.asObservable();
+
   constructor(private httpservice:HttpClient) {
     this.rootURL="http://localhost:9901/farmer"
    }
 
-   farmerLogin(username:String, password:String):Observable<Farmer[]>{
-     return this.httpservice.get<Farmer[]>(this.rootURL+"/login?username="+username+"&password="+password)
-   }
+  farmerLogin(username:String, password:String):Observable<Farmer>{
+   return this.httpservice.get<Farmer>(this.rootURL+"/login?username="+username+"&password="+password)
+  }
 
-   addFarmer(newFarmer:Farmer):Observable<any>{
-     const httpOpts = {
-       headers: new HttpHeaders(
+   //this is for sending farmer details from login component to other components
+  sendFarmer(farmer:Farmer){
+    this.farmerDetailsSource.next(farmer);
+  }
+
+  addFarmer(newFarmer:Farmer):Observable<any>{
+    const httpOpts = {
+      headers: new HttpHeaders(
         {'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'}
-       )
-     }
+      )
+    }
 
      var reqBody = "name="+newFarmer.name+
      "&address="+newFarmer.address+
@@ -34,7 +43,7 @@ export class FarmerService {
      return this.httpservice.post<Farmer>(
        this.rootURL+"/register", reqBody, httpOpts
      )
-   }
+  }
 
    deleteFarmer(farmerId:number):Observable<Farmer>{
      return this.httpservice.request<Farmer>('DELETE', this.rootURL+"/delete",
