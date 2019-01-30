@@ -12,7 +12,6 @@ import javax.persistence.Table;
 import javax.ws.rs.FormParam;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.casestudy.farmingapp.login.Login;
 
 @Entity
 @Table(name="Customer_Table")
