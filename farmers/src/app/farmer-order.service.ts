@@ -26,13 +26,9 @@ export class FarmerOrderService {
 
     var reqBody = "vegName="+newOrder.vegName+
     "&quantity="+newOrder.quantity+
-    "&unitPrice="+newOrder.unitPrice+
+    "&unitPrice="+newOrder.unitPrice
     
-
-    console.log(reqBody)
-    return this.httpservice.post<FarmerOrder>(
-      this.rootURL+"/register", reqBody, httpOpts
-    )
+    return this.httpservice.post<FarmerOrder>(this.rootURL+"/register",reqBody,httpOpts)
   }
 
   deleteOrder(farmerOrderId:number):Observable<FarmerOrder>{

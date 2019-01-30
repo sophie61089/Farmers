@@ -90,6 +90,7 @@ public class Farmer {
 	public void setFarmerOrders(Set<FarmerOrder> farmerOrders) {
 		this.farmerOrders = farmerOrders;
 	}
+	
 	public String getEmail() {
 		return email;
 	}

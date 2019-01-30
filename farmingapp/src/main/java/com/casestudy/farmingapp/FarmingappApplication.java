@@ -9,6 +9,4 @@ public class FarmingappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FarmingappApplication.class, args) ;
 	}
-
 }
-
