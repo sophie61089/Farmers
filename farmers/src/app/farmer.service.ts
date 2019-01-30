@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Farmer } from './farmer';
 import { FarmerOrder } from './farmer-order';
 
@@ -11,20 +11,12 @@ export class FarmerService {
 
   rootURL:String
 
-  farmerDetailsSource = new Subject<Farmer>();
-  farmerDetails=this.farmerDetailsSource.asObservable();
-
   constructor(private httpservice:HttpClient) {
     this.rootURL="http://localhost:9901/farmer"
    }
 
   farmerLogin(username:String, password:String):Observable<Farmer>{
    return this.httpservice.get<Farmer>(this.rootURL+"/login?username="+username+"&password="+password)
-  }
-
-   //this is for sending farmer details from login component to other components
-  sendFarmer(farmer:Farmer){
-    this.farmerDetailsSource.next(farmer);
   }
 
   addFarmer(newFarmer:Farmer):Observable<any>{

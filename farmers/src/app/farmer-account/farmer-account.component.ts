@@ -15,10 +15,8 @@ export class FarmerAccountComponent implements OnInit {
   editAccNo:boolean
   editSortCode:boolean
 
-  farmerDetailsSubscription:Subscription
-
   constructor(private farmsvc:FarmerService) {
-    this.farmer={name:"",address:"",accountNumber:0,sortCode:0,email:"",password:""}
+    
   }
 
   editNameToggle() {
@@ -38,7 +36,9 @@ export class FarmerAccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.farmerDetailsSubscription=this.farmsvc.farmerDetails.subscribe(farmer => { this.farmer = farmer; });
+    this.farmer = {name:localStorage.getItem("name"), address:localStorage.getItem("name"),
+     accountNumber:Number.parseInt(localStorage.getItem("accountNumber")),
+      sortCode:Number.parseInt(localStorage.getItem("sortCode")), email:null, password:null}
   }
 
 }

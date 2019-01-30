@@ -17,6 +17,14 @@
       background: rgba(245, 245, 245, 0.685);      
   }
 
+  .logo h1{
+    color: rgb(0, 77, 3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50pt;
+    font-stretch: narrower;
+    font-weight: lighter;
+  }
+
   .logo span{
     vertical-align: middle
   }
