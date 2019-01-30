@@ -17,6 +17,10 @@ export class VegStockService {
      return this.httpservice.get<VegStock[]>(this.rootURL+"/list")
    }
 
+   getVegById(vegId:number):Observable<VegStock>{
+     return this.httpservice.get<VegStock>(this.rootURL+"/find?id="+vegId)
+   }
+
    addVeg(newVeg:VegStock):Observable<any>{
      const httpOpts = {
        headers: new HttpHeaders(
