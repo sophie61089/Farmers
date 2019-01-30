@@ -40,43 +40,13 @@ export class ProduceUploadComponent implements OnInit {
       )
 
       var VegId = vegType.id
-      this.vegService.addStock(VegId,qtyadded) //update stock list
+      this.vegService.addStock(VegId,qtyadded).subscribe() //update stock list
 
     }
 
-    /*
-    addNewOrder(VegId:number, qtyadded:number){
-      this.newOrder.vegName = this.findName(VegId) //some issue reading vegtype - NEEDS FIXING
-      this.newOrder.quantity = qtyadded
-      this.newOrder.unitPrice = this.findPrice(VegId)
-
-      this.orderService.addOrder(this.newOrder).subscribe( //add order to FarmerOrders DB
-        res =>{
-          this.orderService.getOrders().subscribe(
-            res => {this.farmerOrders = res}
-          )
-        }
-      )
-
-      this.vegService.addStock(VegId,qtyadded) //update stock list
-
+    log(i:number, q:number){
+      console.log(i+" and "+q)
     }
-    
-    findPrice(id:number){
-      var Veg:VegStock
-      this.vegService.getVegById(id).subscribe(
-        res => {Veg = res}
-      )
-      return Veg.price
-    }
-
-    findName(id:number){
-      var Veg:VegStock
-      this.vegService.getVegById(id).subscribe(
-        res => {Veg = res}
-      )
-      return Veg.name
-    }*/
 
   ngOnInit() {
     this.vegService.getVeg().subscribe(
