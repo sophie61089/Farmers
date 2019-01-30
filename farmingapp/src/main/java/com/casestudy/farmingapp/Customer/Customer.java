@@ -29,7 +29,7 @@ public class Customer {
 		@FormParam("address")
 		String address;
 		@FormParam("cardNumber")
-		int cardNumber;
+		long cardNumber;
 		@FormParam("cardType")
 		String cardType;
 		@FormParam("cvc")
@@ -71,10 +71,10 @@ public class Customer {
 		public void setAddress(String address) {
 			this.address = address;
 		}
-		public int getCardNumber() {
+		public long getCardNumber() {
 			return cardNumber;
 		}
-		public void setCardNumber(int cardNumber) {
+		public void setCardNumber(long cardNumber) {
 			this.cardNumber = cardNumber;
 		}
 		public String getCardType() {
