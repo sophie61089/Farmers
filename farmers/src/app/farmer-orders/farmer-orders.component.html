@@ -1,3 +1,15 @@
-<p>
-  farmer-orders works!
-</p>
+<form (submit)="addNewOrder({vegName: name.value,
+  quantity: qty.value,
+  unitPrice:price.value})">
+  <tr>
+    <td><input placeholder="name" #name></td>
+  </tr>
+  <tr>
+    <td><input placeholder="quantity" #qty></td>
+  </tr>
+  <tr>
+    <td><input placeholder="unitPrice" #price></td>
+  </tr>
+  <tr>
+    <td><input type="submit" value="Sign Up Now!"></td>
+  </tr>
