@@ -14,8 +14,15 @@
     font-size: 17px;
   }
   .logo {
-      padding-left: 450px;
-      background: white;
+      background: rgba(245, 245, 245, 0.685);      
+  }
+
+  .logo span{
+    vertical-align: middle
+  }
+  
+  .logo .right{
+    float: right;
   }
 
   /* Change the color of links on hover */
@@ -53,12 +60,15 @@ body {
 
 /* Style the topnav links */
 .topnav a {
-  float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.topnav .right {
+  float: right
 }
 
 .topnav a:hover {
