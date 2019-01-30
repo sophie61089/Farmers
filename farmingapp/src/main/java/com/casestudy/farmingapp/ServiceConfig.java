@@ -18,11 +18,8 @@ public class ServiceConfig extends ResourceConfig{
 		register(CustomerAccessAPI.class);
 		register(FarmerAccessAPI.class);
 		register(VegStockAccessAPI.class);
-<<<<<<< HEAD
 		register(FarmerOrderAccessAPI.class);
-=======
 		register(FarmerOrderAccessAPI.class);
 
->>>>>>> branch 'master' of https://github.com/sophie61089/Farmers.git
 	}
 }
