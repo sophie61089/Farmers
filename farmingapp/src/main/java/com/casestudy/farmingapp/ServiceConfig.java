@@ -19,6 +19,7 @@ public class ServiceConfig extends ResourceConfig{
 		register(FarmerAccessAPI.class);
 		register(VegStockAccessAPI.class);
 		register(FarmerOrderAccessAPI.class);
+		register(FarmerOrderAccessAPI.class);
 
 	}
 }
