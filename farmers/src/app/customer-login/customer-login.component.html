@@ -54,7 +54,7 @@
     </script>
     
 
-<form  (submit)= "addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value})" 
+<form  (submit)= "addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})" 
 style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
@@ -67,8 +67,8 @@ style="border:1px solid #ccc">
     <label><b>Email</b></label>
     <input type="text" placeholder="Enter Email" #email>
 
-    <!-- <label><b>Password</b></label>
-    <input type="text" placeholder="Enter Password" #password> -->
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" #password>
 
     <label><b>Address</b></label>
     <input type="text" placeholder="Enter Address" #address>
@@ -88,8 +88,8 @@ style="border:1px solid #ccc">
     <p>By creating an account you agree to our <a href="termsandconditions" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="reset" value="Reset">Cancel</button>
       <button type="submit" value="Add">Sign Up</button>
+      <button type="reset" value="Reset">Cancel</button>
     </div>
   </div>
 </form>
