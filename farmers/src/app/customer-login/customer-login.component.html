@@ -9,26 +9,26 @@
     </head>
     <body>
     
-    <h2>Customer Login Form</h2>
+    <h2>Customer Login Form {{customer.name}}</h2>
     
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     
     <div id="id01" class="modal">
       
-      <form class="modal-content animate" action="/action_page.php">
+      <form class="modal-content animate" (submit)="customerLogin(uname.value, psw.value)">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
           <img src="assets/logo2.png" alt="Avatar" class="avatar">
         </div>
     
         <div class="container">
-          <label for="uname"><b>Customer Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <label for="uname"><b>Customer Username{{customer.name}}</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" #uname required>
     
           <label for="psw"><b>Customer Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+          <input type="password" placeholder="Enter Password" name="psw" #psw required>
             
-          <button type="submit">Login</button>
+          <button type="submit"><a routerLink="/customeraccount">Login</a></button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>

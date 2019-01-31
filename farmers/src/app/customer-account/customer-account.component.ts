@@ -11,6 +11,8 @@ export class CustomerAccountComponent implements OnInit {
 
   customers:Customer[]
 
+  customer:Customer
+
   editName:boolean
   editAddress:boolean
   editEmail:boolean
@@ -75,8 +77,7 @@ export class CustomerAccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.customerService.getCustomers().subscribe(
-      res => {this.customers = res}          )
+    this.customer = JSON.parse(localStorage.getItem("customer"))
   }
 
 }
