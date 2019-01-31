@@ -55,10 +55,25 @@
         </tr>
       
         <tr>
-            <th>Card number number:</th>
+            <th>Card number:</th>
             <td>
                 HIDDEN
               <button (click)="editCardNoToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editCardNo">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>CVC code:</th>
+            <td>
+                {{customer.cvc}}
+              <button (click)="editCVCToggle()">Edit</button>
             </td>
       
             <td *ngIf="editCardNo">

@@ -14,7 +14,7 @@ export class FarmerService {
   constructor(private httpservice:HttpClient) {
     this.rootURL="http://localhost:9901/farmer"
    }
-
+ 
   farmerLogin(username:String, password:String):Observable<Farmer>{
    return this.httpservice.get<Farmer>(this.rootURL+"/login?username="+username+"&password="+password)
   }
