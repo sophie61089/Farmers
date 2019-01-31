@@ -100,21 +100,6 @@
         </tr>
 
         <tr>
-            <th>CVC code:</th>
-            <td>
-                HIDDEN
-              <button (click)="editCVCToggle()">Edit</button>
-            </td>
-      
-            <td *ngIf="editCvc">
-                <div class="form-group">
-                  <input>
-                  <button>Submit</button>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
             <th>Expiry:</th>
             <td>
                 {{customer.expiryDate}}

@@ -19,7 +19,6 @@ export class CustomerAccountComponent implements OnInit {
   editPassword:boolean
   editCardType:boolean
   editCardNo:boolean
-  editCvc:boolean
   editExpiry:boolean
 
   constructor(private customerService:CustomersService) { 
@@ -48,10 +47,6 @@ export class CustomerAccountComponent implements OnInit {
 
   editCardNoToggle() {
     this.editCardNo=!this.editCardNo
-  }
-
-  editCVCToggle() {
-    this.editCvc=!this.editCvc
   }
 
   editExpiryToggle() {
