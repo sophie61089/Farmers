@@ -26,7 +26,8 @@ export class VegStockService {
 
      var reqBody = "name="+newVeg.name+
      "&amount="+newVeg.amount+
-     "&price="+newVeg.price
+     "&price="+newVeg.price+
+     "&portionSize="+newVeg.portionSize
 
      console.log(reqBody)
      return this.httpservice.post<VegStock>(

@@ -1,5 +1,5 @@
 .menu-bar{
-    background-color: rgb(255, 251, 212);
+    background-color: rgb(250, 248, 224);
     padding-top: 250px;
     padding-bottom: 250px;
     padding-left: 20px;
@@ -16,7 +16,7 @@
     text-decoration: underline
 }
 .component{
-    background-color: rgb(255, 251, 212);
+    background-color: rgb(250, 248, 224);
     padding: 20px;
     margin-top: 20px;
     padding-bottom: 5px;
