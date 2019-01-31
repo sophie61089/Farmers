@@ -19,6 +19,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { HelpComponent } from './help/help.component';
 import { FindUsComponent } from './find-us/find-us.component';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { FarmerService } from './farmer.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    FarmerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

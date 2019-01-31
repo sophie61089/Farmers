@@ -22,13 +22,13 @@
         </div>
     
         <div class="container">
-          <label for="uname"><b>Farmer Username</b></label>
+          <label for="uname"><b>Farmer Username {{farmer.name}}</b></label>
           <input type="text" placeholder="Enter Username" name="uname" #uname required>
     
           <label for="psw"><b>Farmer Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" #psw required>
             
-          <button type="submit">Login</button>
+          <button type="submit"><a routerLink="/farmeraccount">Login</a></button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
