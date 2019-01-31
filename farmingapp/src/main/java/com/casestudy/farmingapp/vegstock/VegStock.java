@@ -24,6 +24,9 @@ public class VegStock {
 	@FormParam("price")
 	double price;
 	
+	@FormParam("portionSize")
+	int portionSize;
+	
 	@Id 
 	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	public int getId() {
@@ -50,12 +53,11 @@ public class VegStock {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	@Override
-	public String toString() {
-		return "VegStock [id=" + id + ", name=" + name + ", amount=" + amount + ", price=" + price + "]";
-
+	public int getPortionSize() {
+		return portionSize;
 	}
-	
-	
+	public void setPortionSize(int portionSize) {
+		this.portionSize = portionSize;
+	}
 	
 }
