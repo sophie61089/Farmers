@@ -9,20 +9,11 @@
   </head>
 
   <body>
-
-    <h2>Customer Login Form</h2>
-
-=======
-    </head>
-    <body>
     
     <h2>Customer Login</h2>
     
    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> 
-    
-    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
->>>>>>> e0ebdba5ea6786cfec448b455142c9800499c764
     <div id="id01" class="modal">
       
       <form class="modal-content animate" (submit)="customerLogin(uname.value, psw.value)">
@@ -32,7 +23,7 @@
         </div>
 
         <div class="container">
-          <label for="uname"><b>Customer Username{{customer.name}}</b></label>
+          <label for="uname"><b>Customer Username</b></label>
           <input type="text" placeholder="Enter Username" name="uname" #uname required>
     
           <label for="psw"><b>Customer Password</b></label>
@@ -64,13 +55,6 @@
         }
       }
     </script>
-
-<form  (submit)= "addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})" 
-style="border:1px solid #ccc">
-  <div class="container">
-    <h2>Sign Up</h2>
-    <p>Fill in the form below to create an account.</p>
-    <hr>
 
     <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})"
       style="border:1px solid #ccc">
