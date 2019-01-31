@@ -36,9 +36,7 @@ export class FarmerAccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.farmer = {name:localStorage.getItem("name"), address:localStorage.getItem("name"),
-     accountNumber:Number.parseInt(localStorage.getItem("accountNumber")),
-      sortCode:Number.parseInt(localStorage.getItem("sortCode")), email:null, password:null}
+    this.farmer = JSON.parse(localStorage.getItem("farmer"))
   }
 
 }
