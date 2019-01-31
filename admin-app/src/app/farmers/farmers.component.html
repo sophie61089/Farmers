@@ -1,3 +1,24 @@
-<p>
-  farmers works!
-</p>
+<h1 class="headtitle">Farmer Accounts and Details:</h1>
+
+<table class="records">
+  <tr>
+    <th class="records-data">--Remove Account--</th>
+    <th class="records-data">Farmer ID</th>
+    <th class="records-data">Name</th>
+    <th class="records-data">Adress</th>
+    <th class="records-data">Payment: Account Number</th>
+    <th class="records-data">Payment: Sort Code</th>
+    <th class="records-data">Username</th>
+    <th class="records-data">Password</th>
+  </tr>
+  <tr *ngFor="let f of farmers; let i=index">
+    <td class="records-data"><button class="button2" (click)="deleteFarmer(f.farmerId)">x</button></td> <!--delete a request record-->
+    <td class="records-data">{{f.farmerId}}</td>
+    <td class="records-data">{{f.name}}</td>
+    <td class="records-data">{{f.address}}</td>
+    <td class="records-data">{{f.accountNumber}}</td>
+    <td class="records-data">{{f.sortCode}}</td>
+    <td class="records-data">{{f.email}}</td>
+    <td class="records-data">{{f.password}}</td>
+  </tr>
+</table>

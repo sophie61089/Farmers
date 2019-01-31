@@ -17,6 +17,14 @@ export class VegStockService {
      return this.httpservice.get<VegStock[]>(this.rootURL+"/list")
    }
 
+   deleteVeg(VegId:number):Observable<VegStock>{
+    return this.httpservice.request<VegStock>('DELETE', this.rootURL+"/delete",
+    {
+     headers: new HttpHeaders({'Content-Type': 'text/plain'}),
+     body: VegId
+   })
+  }
+
    addVeg(newVeg:VegStock):Observable<any>{
      const httpOpts = {
        headers: new HttpHeaders(

@@ -3,6 +3,7 @@ package com.casestudy.farmingapp.box;
 import javax.transaction.Transactional;
 import javax.ws.rs.BeanParam;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -56,6 +57,15 @@ public class BoxAccessAPI {
 	public Box addBox(@BeanParam Box newBox) {
 		getRepository().save(newBox);
 		return newBox;
+	}
+	
+	@DELETE
+	@Path("/delete")
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	public Box deleteBox(int boxId) {
+		Box deleteBox = getRepository().findById(boxId).get();
+		getRepository().delete(deleteBox);
+		return deleteBox;
 	}
 	
 	@POST

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Farmer } from '../farmer';
+import { FarmerService } from '../farmer.service';
 
 @Component({
   selector: 'app-farmers',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmersComponent implements OnInit {
 
-  constructor() { }
+  farmers:Farmer[]
+
+  constructor(private farmerService:FarmerService) {
+    this.farmers=[]
+   }
+
+  deleteFarmer(index:number){
+    this.farmerService.deleteFarmer(index).subscribe(
+      res => {
+        this.farmerService.getFarmer().subscribe(
+          res => {this.farmers = res}
+        )
+      }
+    )
+  }
 
   ngOnInit() {
+    this.farmerService.getFarmer().subscribe(
+      res => {this.farmers = res}
+    )
   }
 
 }

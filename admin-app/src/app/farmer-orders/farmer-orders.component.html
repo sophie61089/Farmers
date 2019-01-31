@@ -1,3 +1,18 @@
-<p>
-  farmer-orders works!
-</p>
+<h1 class="headtitle">Farmer Orders and Details:</h1>
+
+<table class="records">
+  <tr>
+    <th class="records-data">--Remove Order--</th>
+    <th class="records-data">Order ID</th>
+    <th class="records-data">Produce Type</th>
+    <th class="records-data">Quantity</th>
+    <th class="records-data">Price Per Item</th>
+  </tr>
+  <tr *ngFor="let f of orders; let i=index">
+    <td class="records-data"><button class="button2" (click)="deleteOrder(f.orderid)">x</button></td> <!--delete a request record-->
+    <td class="records-data">{{f.orderid}}</td>
+    <td class="records-data">{{f.vegName}}</td>
+    <td class="records-data">{{f.quantity}}</td>
+    <td class="records-data">{{f.unitPrice}}</td>
+  </tr>
+</table>

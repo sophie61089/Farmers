@@ -20,6 +20,20 @@ export class StockComponent implements OnInit {
     this.isEditable = !this.isEditable
   }
 
+  addVeg(newVeg:VegStock){
+    this.vegService.addVeg(newVeg).subscribe()
+  }
+
+  deleteVeg(index:number){
+    this.vegService.deleteVeg(index).subscribe(
+      res => {
+        this.vegService.getVeg().subscribe(
+          res => {this.vegStock = res}
+        )
+      }
+    )
+  }
+
   ngOnInit() {
     this.vegService.getVeg().subscribe(
       res => {this.vegStock = res}

@@ -11,24 +11,24 @@
 
   </tr>
   <tr *ngFor="let v of vegStock; let i=index">
-    <td class="records-data"><button class="button2" (click)="deleteProduce(v.id)">x</button></td> <!--delete a request record-->
+    <td class="records-data"><button class="button2" (click)="deleteVeg(v.id)">x</button></td> <!--delete a request record-->
     <td class="records-data">{{v.id}}</td>
     <td class="records-data">{{v.name}}</td>
     <td class="records-data">{{v.amount}}</td>
     <td class="records-data">{{v.price}}</td>
-    <td class="records-data">{{v.portion}}</td>
+    <td class="records-data">{{v.portionSize}}</td>
   </tr>
   <tr *ngIf="!isEditable" class="ignore">
     <td><button (click) = "toggleEditFields()">Add New Produce Type</button></td>
   </tr>
 </table>
-<form *ngIf="isEditable" (submit)="addNewTraining({trainingTitle: ptitle.value, trainingDescription:tdecsription.value, trainingLeader:tleader.value, trainingDate:tdate.value, 
-  trainingStartTime:tstart.value, trainingDuration:tduration.value, trainingLocation:tlocation.value, trainingSpacesTotal:tspacestot.value})">
+<form *ngIf="isEditable" (submit)="addVeg({name:name.value, amount:stock.value, price:price.value, 
+  portionSize:portion.value})">
   <tr>
     <td><input #name placeholder="name" ></td>
     <td><input placeholder="Current Stock" #stock></td>
     <td><input placeholder="Price per Item" #price></td>
-    <td><input placeholder="Portion Size (Standard veg box)" #portion</td>
+    <td><input placeholder="Portion Size (Standard veg box)" #portion></td>
   </tr>
   <tr>
     <td><input type="submit" value="Add"></td>
