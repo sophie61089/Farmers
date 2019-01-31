@@ -45,6 +45,17 @@ export class ProduceUploadComponent implements OnInit {
       this.vegService.addStock(VegId,qtyadded).subscribe() //update stock list
     }
 
+    calcLowestStock(){
+      var ratios = []
+      for (let v of this.vegStock){
+        ratios.push(v.amount/v.portionSize)
+      }
+
+      var i = ratios.indexOf(Math.max(...ratios))
+
+      return this.vegStock[i].name
+    }
+
     log(i:number, q:number){
       console.log(i+" and "+q)
     }

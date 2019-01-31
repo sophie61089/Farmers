@@ -28,7 +28,7 @@ export class BoxService {
       )
     }
 
-     var reqBody = "name="+newBox.vegTypes
+     var reqBody = "vegTypes="+newBox.vegTypes
 
      return this.httpservice.post<Box>(
        this.rootURL+"/register", reqBody, httpOpts

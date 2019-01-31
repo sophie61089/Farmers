@@ -5,22 +5,16 @@
     <th class="records-data">--Remove Customer--</th>
     <th class="records-data">Customer ID</th>
     <th class="records-data">Name</th>
-    <th class="records-data">Adress</th>
-    <th class="records-data">Payment: Card Number</th>
-    <th class="records-data">Payment: Card Type</th>
-    <th class="records-data">Payment: Expiry</th>
-    <th class="records-data">Username</th>
-    <th class="records-data">Password</th>
+    <th class="records-data">Address</th>
+    <th class="records-data">Subscription Type (variety)</th>
   </tr>
   <tr *ngFor="let c of customers; let i=index">
     <td class="records-data"><button class="button2" (click)="deleteCustomer(c.customerId)">x</button></td> <!--delete a request record-->
     <td class="records-data">{{c.customerId}}</td>
     <td class="records-data">{{c.name}}</td>
     <td class="records-data">{{c.address}}</td>
-    <td class="records-data">{{c.cardNumber}}</td>
-    <td class="records-data">{{c.cardType}}</td>
-    <td class="records-data">{{c.expiryDate}}</td>
-    <td class="records-data">{{c.email}}</td>
-    <td class="records-data">{{c.password}}</td>
+    <td class="records-data">{{c.subscriptionType}}</td>
   </tr>
 </table>
+
+<button (click)="generateBoxes()">Generate Monthly Boxes</button>

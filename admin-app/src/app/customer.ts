@@ -8,4 +8,5 @@ export interface Customer {
     cardType: string;
     cvc: number;
     expiryDate: string;
+    subscriptionType:number
 }
