@@ -9,26 +9,39 @@ import { Farmer } from '../farmer';
 })
 export class FarmerLoginComponent implements OnInit {
 
-  loginBool:boolean
+  farmers:Farmer[]
+
   farmer:Farmer
 
 
-  constructor(private farmsvc: FarmerService) {
-   }
-
-   
+  constructor(private farmerService:FarmerService) {
+    this.farmers=[]
+    this.farmer={farmerId:0,name:"",address:"",accountNumber:0,sortCode:0,email:"",password:""}
+  }
 
   farmerLogin(username:string, password:string){
-    this.farmsvc.farmerLogin(username,password).subscribe(
-      res=>{ this.farmer=res
-      }
+    this.farmerService.farmerLogin(username,password).subscribe(
+      res=>{ this.farmer=res}
     )
     
     localStorage.setItem("farmer", JSON.stringify(this.farmer))
    
   }
 
-  ngOnInit() {
+  addNewFarmer(newFarmer:Farmer){
+    this.farmerService.addNewFarmer(newFarmer)
+
+    this.farmerService.farmerLogin(newFarmer.name,newFarmer.password).subscribe(
+      res=>{ this.farmer=res}
+    )
+
+    localStorage.setItem("farmer", JSON.stringify(this.farmer))
   }
 
+  deleteFarmer(index:number){
+    this.farmerService.deleteFarmer(index)
+  }
+
+  ngOnInit() {
+  }
 }
