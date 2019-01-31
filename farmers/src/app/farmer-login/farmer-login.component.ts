@@ -17,7 +17,7 @@ export class FarmerLoginComponent implements OnInit {
     this.farmer={name:"",address:"",accountNumber:0,sortCode:6,email:"",password:""}
    }
 
-  
+   
 
   farmerLogin(username:string, password:string){
     this.farmsvc.farmerLogin(username,password).subscribe(
