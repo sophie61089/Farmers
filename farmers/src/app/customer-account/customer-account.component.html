@@ -40,6 +40,36 @@
         </tr>
 
         <tr>
+            <th>Email:</th>
+            <td>
+              {{customer.email}}
+              <button (click)="editEmailToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editEmail">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Password:</th>
+            <td>
+              {{customer.password}}
+              <button (click)="editPasswordToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editPassword">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
             <th>Card type:</th>
             <td>
               {{customer.cardType}}
@@ -72,7 +102,22 @@
         <tr>
             <th>CVC code:</th>
             <td>
-                {{customer.cvc}}
+                HIDDEN
+              <button (click)="editCVCToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editCardNo">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Expiry:</th>
+            <td>
+                {{customer.expiryDate}}
               <button (click)="editCVCToggle()">Edit</button>
             </td>
       
