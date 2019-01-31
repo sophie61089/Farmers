@@ -1,15 +1,72 @@
 <header>
-<h1>Customer Details</h1>
+<h1>Your Details</h1>
 </header>
 <header>
     <br>
 
-<button onclick="location.href='../farmeraccount'" type="button">
-  View my account</button>
+    <table>
 
-<br>
-  <br>
-  
-  <button onclick="location.href='../farmerorders'" type="button">
-    View Orders</button>
-</header>
+        <tr>
+          <th>Name:</th>
+          <td>
+            {{customer.name}}
+            <button (click)="editNameToggle()">Edit</button>
+          </td>
+      
+          <td *ngIf="editName">
+              <div class="form-group">
+                <input>
+                <button>Submit</button>
+              </div>
+          </td>
+      
+        </tr>
+      
+        
+      
+        <tr>
+            <th>Address:</th>
+            <td>
+              {{customer.address}}
+              <button (click)="editAddressToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editAddress">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Card type:</th>
+            <td>
+              {{customer.cardType}}
+              <button (click)="editSortCodeToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editSortCode">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+      
+        <tr>
+            <th>Card number number:</th>
+            <td>
+                HIDDEN
+              <button (click)="editCardNoToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editCardNo">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+      
+      </table>
