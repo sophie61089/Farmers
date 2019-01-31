@@ -9,6 +9,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
 
     <h2>Customer Login Form {{customer.name}}</h2>
 
@@ -16,6 +17,15 @@
 
     <div id="id01" class="modal">
 
+=======
+    
+    <h2>Customer Login</h2>
+    
+   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> 
+
+    <div id="id01" class="modal">
+      
+>>>>>>> 3d49a6e5b2742f0885db9df0f83fde2d6f85647e
       <form class="modal-content animate" (submit)="customerLogin(uname.value, psw.value)">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -23,6 +33,7 @@
         </div>
 
         <div class="container">
+<<<<<<< HEAD
           <label for="uname">
             <b>Customer Username{{customer.name}}</b>
           </label>
@@ -36,6 +47,15 @@
           <button type="submit">
             <a routerLink="/customeraccount">Login</a>
           </button>
+=======
+          <label for="uname"><b>Customer Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" #uname required>
+    
+          <label for="psw"><b>Customer Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" #psw required>
+            
+          <button type="submit"><a routerLink="/customeraccount">Login</a></button>
+>>>>>>> 3d49a6e5b2742f0885db9df0f83fde2d6f85647e
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
@@ -61,7 +81,6 @@
         }
       }
     </script>
-
 
     <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})"
       style="border:1px solid #ccc">

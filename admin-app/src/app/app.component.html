@@ -1,0 +1,17 @@
+<div class="col-lg-2"> <!--bootstrap grid layout - align menu to run down left of page-->
+  <div class="menu-bar">
+    <h3>View:</h3>
+    <ul type="circle">
+      <li><a routerLink="/">Stock</a></li> <!--menu links-->
+      <li><a routerLink="/records">Farmers</a></li>
+      <li><a routerLink="/records">Customers</a></li>
+      <li><a routerLink="/records">Farmer Orders</a></li>
+      <li><a routerLink="/records">Boxes</a></li>
+    </ul>
+  </div>
+</div>
+<div class="col-lg-10"> <!--bootstrap grid layout - main section - take up rest of page-->
+  <div class="component">
+    <router-outlet></router-outlet> <!--link different pages/components through router-outlet-->
+  </div>
+</div>
