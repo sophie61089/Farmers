@@ -73,10 +73,10 @@
             <th>Card type:</th>
             <td>
               {{customer.cardType}}
-              <button (click)="editSortCodeToggle()">Edit</button>
+              <button (click)="editCardTypeToggle()">Edit</button>
             </td>
       
-            <td *ngIf="editSortCode">
+            <td *ngIf="editCardType">
                 <div class="form-group">
                   <input>
                   <button>Submit</button>
@@ -106,7 +106,7 @@
               <button (click)="editCVCToggle()">Edit</button>
             </td>
       
-            <td *ngIf="editCardNo">
+            <td *ngIf="editCvc">
                 <div class="form-group">
                   <input>
                   <button>Submit</button>
@@ -118,10 +118,10 @@
             <th>Expiry:</th>
             <td>
                 {{customer.expiryDate}}
-              <button (click)="editCVCToggle()">Edit</button>
+              <button (click)="editExpiryToggle()">Edit</button>
             </td>
       
-            <td *ngIf="editCardNo">
+            <td *ngIf="editExpiry">
                 <div class="form-group">
                   <input>
                   <button>Submit</button>

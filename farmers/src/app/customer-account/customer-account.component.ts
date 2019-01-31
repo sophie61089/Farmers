@@ -11,8 +11,49 @@ export class CustomerAccountComponent implements OnInit {
 
   customers:Customer[]
 
+  editName:boolean
+  editAddress:boolean
+  editEmail:boolean
+  editPassword:boolean
+  editCardType:boolean
+  editCardNo:boolean
+  editCvc:boolean
+  editExpiry:boolean
+
   constructor(private customerService:CustomersService) { 
     this.customers=[]
+  }
+
+  editNameToggle() {
+    this.editName=!this.editName
+  }
+
+  editAddressToggle() {
+    this.editAddress=!this.editAddress
+  }
+
+  editEmailToggle() {
+    this.editEmail=!this.editEmail
+  }
+
+  editPasswordToggle() {
+    this.editPassword=!this.editPassword
+  }
+
+  editCardTypeToggle() {
+    this.editCardType=!this.editCardType
+  }
+
+  editCardNoToggle() {
+    this.editCardNo=!this.editCardNo
+  }
+
+  editCVCToggle() {
+    this.editCvc=!this.editCvc
+  }
+
+  editExpiryToggle() {
+    this.editExpiry=!this.editExpiry
   }
 
   addNewCustomer(newCustomer:Customer){
