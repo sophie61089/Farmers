@@ -8,3 +8,25 @@ header {
     border-style: solid;
     border-width: 1px;
     }
+    select {
+        width: 150px;
+        margin: 10px;
+    }
+    select:focus {
+        min-width: 150px;
+        width: auto;
+    }   
+    input[type=submit] {
+        width: 8em;  height: 2em;
+    }
+    
+    input {
+        width: 400px;
+        padding: 0 20px;
+    }
+    
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 20px;
+        line-height: 1.9;
+    }
