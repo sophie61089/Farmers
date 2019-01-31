@@ -20,7 +20,7 @@ export class FarmerService {
    return this.httpservice.get<Farmer>(this.rootURL+"/login?username="+username+"&password="+password)
   }
 
-  addNewFarmer(newFarmer:Farmer):Observable<any>{
+  addNewFarmer(newFarmer:Farmer):Observable<Farmer>{
     const httpOpts = {
       headers: new HttpHeaders(
         {'Content-Type' : 'application/x-www-form-urlencoded;charset=UTF-8'}
@@ -35,6 +35,7 @@ export class FarmerService {
      "&password="+newFarmer.password
 
      console.log(reqBody)
+     
      return this.httpservice.post<Farmer>(
        this.rootURL+"/register", reqBody, httpOpts
      )
