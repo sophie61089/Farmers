@@ -23,8 +23,12 @@ export class FarmerLoginComponent implements OnInit {
     this.farmsvc.farmerLogin(username,password).subscribe(
       res=>{ this.farmer=res }
     )
+    
+    localStorage.setItem("name", this.farmer.name)
+    localStorage.setItem("address", this.farmer.address)
+    localStorage.setItem("sortCode", this.farmer.sortCode.toString())
+    localStorage.setItem("accountNumber", this.farmer.accountNumber.toString())
 
-    this.farmsvc.sendFarmer(this.farmer);
   }
 
   ngOnInit() {
