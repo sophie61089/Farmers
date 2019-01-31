@@ -52,8 +52,9 @@ export class ProduceUploadComponent implements OnInit {
       }
 
       var i = ratios.indexOf(Math.max(...ratios))
+      var lowveg = this.vegStock[i]
 
-      return this.vegStock[i].name
+      return lowveg
     }
 
     log(i:number, q:number){
