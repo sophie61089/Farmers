@@ -9,13 +9,13 @@
   </head>
 
   <body>
-    
-    <h2>Customer Login</h2>
-    
-   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> 
+
+    <h2>Customer Login Form {{customer.name}}</h2>
+
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
     <div id="id01" class="modal">
-      
+
       <form class="modal-content animate" (submit)="customerLogin(uname.value, psw.value)">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -23,13 +23,19 @@
         </div>
 
         <div class="container">
-          <label for="uname"><b>Customer Username</b></label>
+          <label for="uname">
+            <b>Customer Username{{customer.name}}</b>
+          </label>
           <input type="text" placeholder="Enter Username" name="uname" #uname required>
-    
-          <label for="psw"><b>Customer Password</b></label>
+
+          <label for="psw">
+            <b>Customer Password</b>
+          </label>
           <input type="password" placeholder="Enter Password" name="psw" #psw required>
-            
-          <button type="submit"><a routerLink="/customeraccount">Login</a></button>
+
+          <button type="submit">
+            <a routerLink="/customeraccount">Login</a>
+          </button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
@@ -104,13 +110,11 @@
         <input type="text" placeholder="Enter CVC" #cvc>
 
         <p>By creating an account you agree to our
-          <a href="termsandconditions" style="color:dodgerblue">Terms & Privacy</a>.</p>
+          <a href="termsandconditions" style="color:dodgerblue">Terms & Conditions</a>.</p>
 
         <div class="clearfix">
-          <button type="reset" value="Reset">Cancel</button>
-          <button type="submit" value="Value">
-            <a href="customeraccount">Sign up</a>
-          </button>
+            <a routerLink="/customeraccount"><button type="submit" value="Value">Subscribe</button></a>  
+          <button type="reset" value="Reset">Reset form</button>
           <!-- <button id="myBtn" onclick="javascript:alert('Thank you for Signing up, please view the Customer Home Page. http://localhost:4200/customeraccount')" type="submit" value="Add">Sign Up</button> -->
 
           <!-- <script>
