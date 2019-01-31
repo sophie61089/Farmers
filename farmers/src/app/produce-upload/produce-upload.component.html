@@ -1,23 +1,22 @@
+<header>
 <p>
   produce-upload works! does it tho...
 </p>
 
-<form>
+<form (submit)="addNewOrder(veg.value,quantity.value)">
   <tr>
     <td>
-      <select required #veg>
+      <select #veg>
         <option>-----Select-----</option>
-        <option *ngFor="let v of vegStock; let i=index" value={{v.id}}>{{v.name}}</option>
+        <option *ngFor="let v of vegStock; let i=index" value={{i}}>{{v.name}} at £{{v.price}} per item</option>
       </select>
     </td>
     <td>
       <input placeholder="Quantity" size="8" #quantity>
     </td>
     <td>
-      Price
-    </td>
-    <td>
       <input type="submit" value="Add">
     </td>
   </tr>
 </form>
+</header>

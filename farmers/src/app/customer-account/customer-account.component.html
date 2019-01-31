@@ -1,15 +1,87 @@
-<button>Logout</button>
-<h1>Customer Details</h1>
+<header>
+<h1>Your Details</h1>
+</header>
+<header>
+    <br>
 
-<form (submit)= "addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value})">
-  <tr>
-      <td><input placeholder="Name" #name></td> 
-      <td><input placeholder="Email" #email></td> 
-      <td><input placeholder="Address" #address></td> 
-      <td><input placeholder="Card Number" #cardNumber></td> 
-      <td><input placeholder="Card Type" #cardType></td>
-      <td><input placeholder="Expiry Date" #expiryDate></td>
-      <td><input placeholder="Cvc" #cvc></td> 
-      <td><input type ="submit" value="Add"></td> 
-  </tr>
-  </form>
+    <table>
+
+        <tr>
+          <th>Name:</th>
+          <td>
+            {{customer.name}}
+            <button (click)="editNameToggle()">Edit</button>
+          </td>
+      
+          <td *ngIf="editName">
+              <div class="form-group">
+                <input>
+                <button>Submit</button>
+              </div>
+          </td>
+      
+        </tr>
+      
+        
+      
+        <tr>
+            <th>Address:</th>
+            <td>
+              {{customer.address}}
+              <button (click)="editAddressToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editAddress">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Card type:</th>
+            <td>
+              {{customer.cardType}}
+              <button (click)="editSortCodeToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editSortCode">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+      
+        <tr>
+            <th>Card number:</th>
+            <td>
+                HIDDEN
+              <button (click)="editCardNoToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editCardNo">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>CVC code:</th>
+            <td>
+                {{customer.cvc}}
+              <button (click)="editCVCToggle()">Edit</button>
+            </td>
+      
+            <td *ngIf="editCardNo">
+                <div class="form-group">
+                  <input>
+                  <button>Submit</button>
+                </div>
+            </td>
+        </tr>
+      
+      </table>
