@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     </style>
-<<<<<<< HEAD
   </head>
 
   <body>
@@ -17,51 +16,28 @@
     </head>
     <body>
     
-<<<<<<< HEAD
     <h2>Customer Login</h2>
     
    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> 
     
-=======
-    <h2>Customer Login Form {{customer.name}}</h2>
-    
->>>>>>> 262255ff0918a9f43bfbe493017e54fdb0c790ba
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 >>>>>>> e0ebdba5ea6786cfec448b455142c9800499c764
     <div id="id01" class="modal">
-<<<<<<< HEAD
-
-      <form class="modal-content animate">
-=======
       
       <form class="modal-content animate" (submit)="customerLogin(uname.value, psw.value)">
->>>>>>> 262255ff0918a9f43bfbe493017e54fdb0c790ba
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
           <img src="assets/logo2.png" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
-<<<<<<< HEAD
-          <label for="uname">
-            <b>Customer Username</b>
-          </label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-
-          <label for="psw">
-            <b>Customer Password</b>
-          </label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-
-=======
           <label for="uname"><b>Customer Username{{customer.name}}</b></label>
           <input type="text" placeholder="Enter Username" name="uname" #uname required>
     
           <label for="psw"><b>Customer Password</b></label>
           <input type="password" placeholder="Enter Password" name="psw" #psw required>
             
->>>>>>> 262255ff0918a9f43bfbe493017e54fdb0c790ba
           <button type="submit"><a routerLink="/customeraccount">Login</a></button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -89,15 +65,12 @@
       }
     </script>
 
-<<<<<<< HEAD
 <form  (submit)= "addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})" 
 style="border:1px solid #ccc">
   <div class="container">
     <h2>Sign Up</h2>
     <p>Fill in the form below to create an account.</p>
     <hr>
-=======
->>>>>>> e0ebdba5ea6786cfec448b455142c9800499c764
 
     <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})"
       style="border:1px solid #ccc">
