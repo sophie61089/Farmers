@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FarmerService } from '../farmer.service';
 import { Farmer } from '../farmer';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-farmer-account',

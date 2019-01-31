@@ -14,7 +14,6 @@ export class FarmerLoginComponent implements OnInit {
 
 
   constructor(private farmsvc: FarmerService) {
-    this.farmer={name:"",address:"",accountNumber:0,sortCode:6,email:"",password:""}
    }
 
    
@@ -22,7 +21,6 @@ export class FarmerLoginComponent implements OnInit {
   farmerLogin(username:string, password:string){
     this.farmsvc.farmerLogin(username,password).subscribe(
       res=>{ this.farmer=res
-      
       }
     )
     

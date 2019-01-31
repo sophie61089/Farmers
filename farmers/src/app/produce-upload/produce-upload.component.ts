@@ -4,6 +4,8 @@ import { VegStockService } from '../veg-stock.service';
 import { FarmerOrderService } from '../farmer-order.service';
 import { FarmerOrder } from '../farmer-order';
 import { Observable } from 'rxjs';
+import { Farmer } from '../farmer';
+import { FarmerService } from '../farmer.service';
 
 @Component({
   selector: 'app-produce-upload',
@@ -14,10 +16,12 @@ export class ProduceUploadComponent implements OnInit {
 
   vegStock:VegStock[]
   farmerOrders:FarmerOrder[]
+  farmer:Farmer
 
   constructor(
     private vegService:VegStockService,
-    private orderService:FarmerOrderService
+    private orderService:FarmerOrderService,
+    private farmerService:FarmerService
     ) {
       this.vegStock=[]
       this.farmerOrders=[]
@@ -26,22 +30,19 @@ export class ProduceUploadComponent implements OnInit {
     addNewOrder(vegStockIndex:number, qtyadded:number){
       var vegType = this.vegStock[vegStockIndex]
       var newOrder = {} as FarmerOrder
+      var savedOrder = {} as FarmerOrder
 
       newOrder.vegName = vegType.name
       newOrder.quantity = qtyadded
       newOrder.unitPrice = vegType.price
 
       this.orderService.addOrder(newOrder).subscribe( //add order to FarmerOrders DB
-        res =>{
-          this.orderService.getOrders().subscribe(
-            res => {this.farmerOrders = res}
-          )
-        }
+          res=>{savedOrder=res
+            this.farmerService.addOrderToFarmer(this.farmer.farmerId, savedOrder.orderid).subscribe() 
+          }
       )
-
       var VegId = vegType.id
       this.vegService.addStock(VegId,qtyadded).subscribe() //update stock list
-
     }
 
     log(i:number, q:number){
@@ -52,6 +53,7 @@ export class ProduceUploadComponent implements OnInit {
     this.vegService.getVeg().subscribe(
       res => {this.vegStock = res}
     )
+    this.farmer = JSON.parse(localStorage.getItem("farmer"))
   }
 
 }

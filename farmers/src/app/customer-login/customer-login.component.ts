@@ -11,8 +11,19 @@ export class CustomerLoginComponent implements OnInit {
 
   customers:Customer[]
 
+  customer:Customer
+
   constructor(private customerService:CustomersService) { 
     this.customers=[]
+    this.customer={customerId:0,name:"",email:"",address:"",cardNumber:"",cardType:"",password:"",cvc:0,expiryDate:""}
+  }
+
+  customerLogin(uname:string,pword:string) {
+    this.customerService.customerLogin(uname,pword).subscribe(
+      res=> {this.customer = res}
+    )
+
+    localStorage.setItem("customer",JSON.stringify(this.customer))
   }
 
   addNewCustomer(newCustomer:Customer){

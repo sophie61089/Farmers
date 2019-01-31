@@ -12,6 +12,10 @@ export class CustomersService {
     this.rootURL="http://localhost:9901/customers"
   }
 
+  customerLogin(username:String, password:String):Observable<Customer>{
+    return this.httpsvc.get<Customer>(this.rootURL+"/login?username="+username+"&password="+password)
+   }
+
   getCustomers():Observable<Customer[]>{
     return this.httpsvc.get<Customer[]>(this.rootURL+"/list")
     }
