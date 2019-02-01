@@ -20,6 +20,10 @@ export class FarmerService {
    return this.httpservice.get<Farmer>(this.rootURL+"/login?username="+username+"&password="+password)
   }
 
+  getFarmer():Observable<Farmer[]>{
+    return this.httpservice.get<Farmer[]>(this.rootURL+"/list")
+  }
+
   addFarmer(newFarmer:Farmer):Observable<any>{
     const httpOpts = {
       headers: new HttpHeaders(

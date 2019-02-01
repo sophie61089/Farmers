@@ -1,8 +1,11 @@
 <header>
   <h2>Produce-Upload</h2>
 </header>
+
 <header>
-  <h3 align="left">You can upload your products here!</h3>
+  <h3 align="center">You can upload your products here!</h3>
+  <p>~~~Psst! We're running low on {{calcLowestStock().name}} at the moment!~~~</p>
+  <div align="center">
   <form (submit)="addNewOrder(veg.value,quantity.value)">
     <tr>
       <td>
@@ -18,5 +21,5 @@
         <input type="submit" value="Add">
       </td>
     </tr>
-  </form>
+  </form></div>
 </header>

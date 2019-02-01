@@ -1,0 +1,82 @@
+.ignore{
+    all:unset;
+}
+.break{  
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+    border-color: rgb(180, 212, 248) 
+}
+
+.days{
+    align-items: center;
+    background-color: rgb(93, 187, 241);
+    justify-content: center;
+    margin: auto;
+
+}
+.days-tab{
+    margin: auto;    
+}
+.days-tab-cell{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.main th{
+    font-size: 16pt;
+}
+.main td{
+    padding: 10px
+}
+.records{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width:100%;
+}
+.records tr:nth-child(even){
+   background: rgb(232, 235, 206)
+}
+.records tr:nth-child(odd){
+   background: rgb(255, 251, 212);
+}
+.records th{
+    background: rgb(207, 198, 155)
+}
+.records-data{
+    text-align : center;
+    border: 1px black solid;
+}
+.button {
+    border-radius: 100%;
+    background-color: rgb(160, 226, 202);
+    border-style: inset;
+}
+.button:hover{
+    border-radius: 100%;
+    background-color: rgb(93, 187, 241);
+    color: white;
+    border-style: inset;
+}
+.button2 {
+    border-radius: 30%;
+}
+.button2:hover {
+    background-color: darkgray;
+}
+.empDat {
+    width: 100%;
+}
+.displaymessage {
+    font-size: 16pt;
+    font-style: italic;
+    
+}
+.headtitle {
+    font-size: 18pt;
+    font-weight: bold;
+    color: rgb(31, 31, 31);
+}

@@ -1,3 +1,14 @@
-<p>
-  boxes works!
-</p>
+<h1 class="headtitle">Customer Boxes and Details:</h1>
+
+<table class="records">
+  <tr>
+    <th class="records-data">--Remove Box--</th>
+    <th class="records-data">Box ID</th>
+    <th class="records-data">Contents</th>
+  </tr>
+  <tr *ngFor="let f of boxes; let i=index">
+    <td class="records-data"><button class="button2" (click)="deleteBox(f.id)">x</button></td> <!--delete a request record-->
+    <td class="records-data">{{f.id}}</td>
+    <td class="records-data">{{f.vegTypes}}</td>
+  </tr>
+</table>

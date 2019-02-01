@@ -1,9 +1,18 @@
+<div style="text-align:center">
+    <div class="topnav">
+        <a routerLink="/">Home</a>
+        <a routerLink="/products">Products</a>
+        <a routerLink="/order">Orders</a>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</div>
+</div>
+
 <header>
 <h2>Your Details</h2>
 </header>
 <header>
     <br>
-
+ 
     <table>
 
         <tr>
@@ -92,21 +101,6 @@
             </td>
       
             <td *ngIf="editCardNo">
-                <div class="form-group">
-                  <input>
-                  <button>Submit</button>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <th>CVC code:</th>
-            <td>
-                HIDDEN
-              <button (click)="editCVCToggle()">Edit</button>
-            </td>
-      
-            <td *ngIf="editCvc">
                 <div class="form-group">
                   <input>
                   <button>Submit</button>

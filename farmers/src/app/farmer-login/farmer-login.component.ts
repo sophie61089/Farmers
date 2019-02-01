@@ -29,12 +29,10 @@ export class FarmerLoginComponent implements OnInit {
   }
 
   addNewFarmer(newFarmer:Farmer){
-    this.farmerService.addNewFarmer(newFarmer)
-
-    this.farmerService.farmerLogin(newFarmer.name,newFarmer.password).subscribe(
+    this.farmerService.addNewFarmer(newFarmer).subscribe(
       res=>{ this.farmer=res}
     )
-
+    
     localStorage.setItem("farmer", JSON.stringify(this.farmer))
   }
 
