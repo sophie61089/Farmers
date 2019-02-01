@@ -54,7 +54,7 @@ export class ProduceUploadComponent implements OnInit {
         ratios.push(v.amount/v.portionSize)
       }
 
-      var i = ratios.indexOf(Math.max(...ratios))
+      var i = ratios.indexOf(Math.min(...ratios))
       var lowveg = this.vegStock[i]
 
       return lowveg
