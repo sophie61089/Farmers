@@ -54,6 +54,8 @@ public class FarmerOrderAccessAPI {
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public FarmerOrder deleteFarmerOrder(int farmerOrderId) {
 		FarmerOrder deleteFarmerOrder = getRepository().findById(farmerOrderId).get(); 
+		deleteFarmerOrder.setFarmer(null);
+		getRepository().save(deleteFarmerOrder);
 		getRepository().delete(deleteFarmerOrder);									
 		return deleteFarmerOrder;
 	}
