@@ -26,7 +26,8 @@ export class CustomerLoginComponent implements OnInit {
         localStorage.setItem("customer",JSON.stringify(this.customer))
       }
     )
-
+    
+    this.showSubcribeMessage=!this.showSubcribeMessage
     
   }
 

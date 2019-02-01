@@ -22,6 +22,8 @@
           <img src="assets/logo2.png" alt="Avatar" class="avatar">
         </div>
 
+        <a routerLink="/customeraccount"><h1 *ngIf="showSubcribeMessage">Thank you for logging in {{customer.name}}! Click here to view your account</h1></a>
+
         <div class="container">
           <label for="uname">
             <b>Customer Username{{customer.name}}</b>
@@ -33,7 +35,7 @@
           </label>
           <input type="password" placeholder="Enter Password" name="psw" #psw required>
 
-          <a routerLink="/customeraccount"><button type="submit">Login</button></a>
+          <button type="submit">Login</button>
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
