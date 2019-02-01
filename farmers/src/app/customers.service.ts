@@ -20,7 +20,7 @@ export class CustomersService {
     return this.httpsvc.get<Customer[]>(this.rootURL+"/list")
     }
 
-  addNewCustomer(newCustomer:Customer):Observable<Customer>{
+  addNewCustomer(newCustomer:Customer, date:string):Observable<Customer>{
     const http0pts ={
       headers: new HttpHeaders(
           {'Content-Type':
@@ -28,7 +28,10 @@ export class CustomersService {
     }
       
     var reqBody="password="+newCustomer.password+"&address="+newCustomer.address+"&cardNumber="
-    +newCustomer.cardNumber+"&cardType="+newCustomer.cardType+"&cvc="+newCustomer.cvc+"&expiryDate="+newCustomer.expiryDate+"&name="+newCustomer.name+"&email="+newCustomer.email
+    +newCustomer.cardNumber+"&cardType="+
+    newCustomer.cardType+"&cvc="+newCustomer.cvc+"&expiryDate="+
+    newCustomer.expiryDate+"&name="+newCustomer.name+"&email="+newCustomer.email+
+    "&subType="+8+"&delivery="+date
 
     return this.httpsvc.post<Customer>(this.rootURL+"/register",reqBody,http0pts)
   }

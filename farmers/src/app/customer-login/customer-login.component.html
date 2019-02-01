@@ -97,7 +97,7 @@
           <a routerLink="/customeraccount"><h1 *ngIf="showSubcribeMessage">Thank you for subscribing {{customer.name}}! Click here to view your account</h1></a>
           <h2>Subscribe</h2>
           <h4>Please fill in this form to create an account.</h4>
-          <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})" style="border:1px solid #ccc"
+          <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value}, date)" style="border:1px solid #ccc"
           *ngIf="!showSubcribeMessage">
           <div class="row">
             <div class="column" style="background-color:#aaa;">
@@ -116,6 +116,11 @@
                 <p>Password:
                   <input type="password" placeholder="Enter Password" #password>
                 </p>
+              </label>
+              <label>
+                <p>Preferred Delivery: 
+                  <input type="date" name="calendar" #date>
+                </p> 
               </label>
             </div>
             <div class="column" style="background-color:#bbb;">

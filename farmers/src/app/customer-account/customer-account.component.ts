@@ -53,14 +53,6 @@ export class CustomerAccountComponent implements OnInit {
     this.editExpiry=!this.editExpiry
   }
 
-  addNewCustomer(newCustomer:Customer){
-    this.customerService.addNewCustomer(newCustomer).subscribe(
-      res=>{ this.customerService.getCustomers().subscribe(
-        res=>{ this.customers= res}
-      )}
-    )
-  }
-
   deleteCustomer(index:number){
     this.customerService.deleteCustomer(index).subscribe(
       res=>{

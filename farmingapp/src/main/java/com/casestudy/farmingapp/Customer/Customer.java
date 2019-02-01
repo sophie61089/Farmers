@@ -53,6 +53,9 @@ public class Customer {
 		@FormParam("subType")
 		int subscriptionType;
 		
+		@FormParam("delivery")
+		String delivery;
+		
 		Set<Box> boxes = new HashSet<>();
 		
 		//@FormParam("browniePoints")

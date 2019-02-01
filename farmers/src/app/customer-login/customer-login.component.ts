@@ -30,9 +30,9 @@ export class CustomerLoginComponent implements OnInit {
     
   }
 
-  addNewCustomer(newCustomer:Customer){
-  
-    this.customerService.addNewCustomer(newCustomer).subscribe(
+  addNewCustomer(newCustomer:Customer, date:Date){
+    var stringDate = JSON.stringify(date)
+    this.customerService.addNewCustomer(newCustomer, stringDate).subscribe(
       res=>{ this.customer = res 
         localStorage.setItem("customer",JSON.stringify(this.customer))
       }
