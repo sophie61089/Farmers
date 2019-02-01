@@ -33,9 +33,7 @@
           <input type="password" placeholder="Enter Password" name="psw" #psw required>
 
 
-          <a routerLink="/farmerhome">
             <button type="submit">Login</button>
-          </a>
 
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -67,8 +65,12 @@
 
   </html>
 
+  <a routerLink="/farmerhome">
+    <h1 *ngIf="showSubscribeMessage">Thank you for subscribing! Click here to go to you home page.</h1>
+  </a>
+
   <form (submit)="addNewFarmer({farmerId:0,address:address.value,name:name.value,email:email.value,password:password.value,accountNumber:accountNumber.value,sortCode:sortCode.value})"
-    style="border:1px solid #ccc">
+    style="border:1px solid #ccc" *ngIf="!showSubscribeMessage">
     <div class="container">
       <html>
 
@@ -100,12 +102,12 @@
       </head>
 
       <body>
-        <h2>Sigh up</h2>
+        <h2>Sign up</h2>
         <h4>Please fill in this form to create an account.</h4>
 
         <div class="row">
           <div class="column" style="background-color:#aaa;">
-            <h2>Customer Details</h2>
+            <h2>Farmer Details</h2>
             <label>
               <p>Name:
                 <input type="text" placeholder="Enter Name" #name>
@@ -123,7 +125,7 @@
             </label>
           </div>
           <div class="column" style="background-color:#bbb;">
-            <h2>Customer Bank Details</h2>
+            <h2>Farmer Bank Details</h2>
             <label>
               <p>Address:
                 <input type="text" placeholder="Enter Address" #address>
@@ -147,9 +149,9 @@
 
               <div class="clearfix">
 
-                <a routerLink="/farmerhome">
+                <!-- <a routerLink="/farmerhome"> -->
                   <button type="submit" value="Value">Sign up</button>
-                </a>
+                <!-- </a> -->
                 <button type="reset" value="Reset">Cancel</button>
               </div>
             </footer>

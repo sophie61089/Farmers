@@ -10,7 +10,7 @@
 
   <body>
 
-    <h2>Customer Login Form {{customer.name}}</h2>
+    <h2>Customer Login Form</h2>
 
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
@@ -62,8 +62,7 @@
       }
     </script>
 
-    <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})"
-      style="border:1px solid #ccc">
+    
       <div class="container">
         <html>
 
@@ -95,9 +94,11 @@
         </head>
 
         <body>
+          <a routerLink="/customeraccount"><h1 *ngIf="showSubcribeMessage">Thank you for subscribing {{customer.name}}! Click here to view your account</h1></a>
           <h2>Subscribe</h2>
           <h4>Please fill in this form to create an account.</h4>
-
+          <form (submit)="addNewCustomer({customerId:0,address:address.value,cardNumber:cardNumber.value,cardType:cardType.value, cvc:cvc.value, expiryDate:expiryDate.value, name:name.value, email:email.value, password:password.value})" style="border:1px solid #ccc"
+          *ngIf="!showSubcribeMessage">
           <div class="row">
             <div class="column" style="background-color:#aaa;">
               <h2>Customer Details</h2>
@@ -152,9 +153,8 @@
 
                 <div class="clearfix">
 
-                  <a routerLink="/farmerhome">
-                    <button type="submit" value="Value">Subscribe</button>
-                  </a>
+                  <button type="submit" value="Subscribe">Subcribe</button>
                   <button type="reset" value="Reset">Cancel</button>
                 </div>
               </footer>
+     
