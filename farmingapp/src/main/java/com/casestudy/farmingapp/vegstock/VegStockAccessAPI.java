@@ -58,7 +58,6 @@ public class VegStockAccessAPI {
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public VegStock deleteVegStock(int id) {
 		VegStock deleteVegStock = getRepository().findById(id).get();
-		System.out.println(deleteVegStock);
 		getRepository().delete(deleteVegStock);
 		return deleteVegStock;
 	}

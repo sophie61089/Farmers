@@ -32,6 +32,7 @@ export class CustomerLoginComponent implements OnInit {
         res=>{ this.customers= res}
       )}
     )
+    localStorage.setItem("customer", JSON.stringify(newCustomer))
   }
 
   deleteCustomer(index:number){

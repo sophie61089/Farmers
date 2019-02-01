@@ -64,6 +64,8 @@ public class BoxAccessAPI {
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public Box deleteBox(int boxId) {
 		Box deleteBox = getRepository().findById(boxId).get();
+		deleteBox.setCustomer(null);
+		getRepository().save(deleteBox);
 		getRepository().delete(deleteBox);
 		return deleteBox;
 	}
