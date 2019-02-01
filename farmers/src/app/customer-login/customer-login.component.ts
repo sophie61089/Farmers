@@ -22,19 +22,23 @@ export class CustomerLoginComponent implements OnInit {
 
   customerLogin(uname:string,pword:string) {
     this.customerService.customerLogin(uname,pword).subscribe(
-      res=> {this.customer = res}
+      res=> {this.customer = res
+        localStorage.setItem("customer",JSON.stringify(this.customer))
+      }
     )
 
-    localStorage.setItem("customer",JSON.stringify(this.customer))
+    
   }
 
   addNewCustomer(newCustomer:Customer){
-    console.log(JSON.stringify(newCustomer))
+  
     this.customerService.addNewCustomer(newCustomer).subscribe(
-      res=>{ this.customer = res }
+      res=>{ this.customer = res 
+        localStorage.setItem("customer",JSON.stringify(this.customer))
+      }
     )
 
-    localStorage.setItem("customer",JSON.stringify(this.customer))
+    
 
     this.showSubcribeMessage=!this.showSubcribeMessage
   }
