@@ -67,7 +67,7 @@ export class VegStockService {
     var reqBody = "id="+vegId+"&used="+qtyremoved
 
     return this.httpservice.post<VegStock>(
-      this.rootURL+"/addstock", reqBody, httpOpts
+      this.rootURL+"/removestock", reqBody, httpOpts
     )
    }
 

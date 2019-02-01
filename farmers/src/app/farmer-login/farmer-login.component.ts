@@ -13,6 +13,9 @@ export class FarmerLoginComponent implements OnInit {
 
   farmer:Farmer
 
+  showSubscribeMessage:boolean
+
+
 
   constructor(private farmerService:FarmerService) {
     this.farmers=[]
@@ -21,19 +24,23 @@ export class FarmerLoginComponent implements OnInit {
 
   farmerLogin(username:string, password:string){
     this.farmerService.farmerLogin(username,password).subscribe(
-      res=>{ this.farmer=res}
+      res=>{ this.farmer=res
+        localStorage.setItem("farmer", JSON.stringify(this.farmer))
+      }
     )
     
-    localStorage.setItem("farmer", JSON.stringify(this.farmer))
+    
    
   }
 
   addNewFarmer(newFarmer:Farmer){
     this.farmerService.addNewFarmer(newFarmer).subscribe(
-      res=>{ this.farmer=res}
+      res=>{ this.farmer=res
+        localStorage.setItem("farmer", JSON.stringify(this.farmer))
+      }
     )
-    
-    localStorage.setItem("farmer", JSON.stringify(this.farmer))
+
+    this.showSubscribeMessage=!this.showSubscribeMessage
   }
 
   deleteFarmer(index:number){
