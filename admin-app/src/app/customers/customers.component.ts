@@ -31,6 +31,7 @@ export class CustomersComponent implements OnInit {
         var v = this.veg[i]
         if (v.amount >= v.portionSize){
           items.push(JSON.stringify(v.name))
+          this.vegService.removeStock(v.id,v.portionSize).subscribe()
           i++
         } else {
           i++
