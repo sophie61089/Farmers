@@ -3,8 +3,6 @@ import { Box } from '../box';
 import { BoxService } from '../box.service';
 import { VegStockService } from '../veg-stock.service';
 import { VegStock } from '../veg-stock';
-import { and } from '@angular/router/src/utils/collection';
-import { start } from 'repl';
 
 @Component({
   selector: 'app-boxes',
