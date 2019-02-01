@@ -9,4 +9,5 @@ export interface Customer {
     cvc: number;
     expiryDate: string;
     subscriptionType:number
+    delivery:string
 }

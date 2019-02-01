@@ -124,6 +124,13 @@ public class Customer {
 			this.subscriptionType = subscriptionType;
 		}
 		
+		
+		public String getDelivery() {
+			return delivery;
+		}
+		public void setDelivery(String delivery) {
+			this.delivery = delivery;
+		}
 		@OneToMany(mappedBy="customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 		@XmlTransient
 		public Set<Box> getBoxes() {
