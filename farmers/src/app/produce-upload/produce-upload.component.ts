@@ -17,6 +17,7 @@ export class ProduceUploadComponent implements OnInit {
   vegStock:VegStock[]
   farmerOrders:FarmerOrder[]
   farmer:Farmer
+  showHomeReturn:boolean
 
   constructor(
     private vegService:VegStockService,
@@ -43,6 +44,8 @@ export class ProduceUploadComponent implements OnInit {
       )
       var VegId = vegType.id
       this.vegService.addStock(VegId,qtyadded).subscribe() //update stock list
+
+      this.showHomeReturn=true
     }
 
     calcLowestStock(){
