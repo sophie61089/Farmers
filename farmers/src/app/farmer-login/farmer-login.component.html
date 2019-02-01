@@ -67,8 +67,12 @@
 
   </html>
 
+  <a routerLink="/farmerhome">
+    <h1 *ngIf="showSubscribeMessage">Thank you for subscribing! Click here to go to you home page.</h1>
+  </a>
+
   <form (submit)="addNewFarmer({farmerId:0,address:address.value,name:name.value,email:email.value,password:password.value,accountNumber:accountNumber.value,sortCode:sortCode.value})"
-    style="border:1px solid #ccc">
+    style="border:1px solid #ccc" *ngIf="!showSubscribeMessage">
     <div class="container">
       <html>
 
