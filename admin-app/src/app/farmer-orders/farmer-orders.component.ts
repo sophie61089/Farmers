@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FarmerOrder } from '../farmer-order';
+import { FarmerOrderService } from '../farmer-order.service';
 
 @Component({
   selector: 'app-farmer-orders',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FarmerOrdersComponent implements OnInit {
 
-  constructor() { }
+  orders:FarmerOrder[]
+
+  constructor(private ordersService:FarmerOrderService) { 
+    this.orders=[]
+  }
+
+  deleteOrder(index:number){
+    this.ordersService.deleteOrder(index).subscribe(
+      res => {
+        this.ordersService.getOrders().subscribe(
+          res => {this.orders = res}
+        )
+      }
+    )
+  }
 
   ngOnInit() {
+    this.ordersService.getOrders().subscribe(
+      res => {this.orders = res}
+    )
   }
 
 }

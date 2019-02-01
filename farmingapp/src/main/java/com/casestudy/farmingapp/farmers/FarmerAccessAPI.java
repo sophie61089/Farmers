@@ -59,6 +59,13 @@ public class FarmerAccessAPI {
 			return null;
 	}
 	
+	@Path("/list")
+	@GET
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	public Iterable<Farmer> listFarmers(){
+		return getRepository().findAll();
+	}
+	
 	@POST
 	@Path("/register")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
