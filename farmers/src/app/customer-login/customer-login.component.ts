@@ -13,6 +13,8 @@ export class CustomerLoginComponent implements OnInit {
 
   customer:Customer
 
+  showSubcribeMessage:boolean
+
   constructor(private customerService:CustomersService) { 
     this.customers=[]
     this.customer={customerId:0,name:"",email:"",address:"",cardNumber:"",cardType:"",password:"",cvc:0,expiryDate:""}
@@ -27,11 +29,14 @@ export class CustomerLoginComponent implements OnInit {
   }
 
   addNewCustomer(newCustomer:Customer){
+    console.log(JSON.stringify(newCustomer))
     this.customerService.addNewCustomer(newCustomer).subscribe(
-      res=>{ this.customerService.getCustomers().subscribe(
-        res=>{ this.customers= res}
-      )}
+      res=>{ this.customer = res }
     )
+
+    localStorage.setItem("customer",JSON.stringify(this.customer))
+
+    this.showSubcribeMessage=!this.showSubcribeMessage
   }
 
   deleteCustomer(index:number){
